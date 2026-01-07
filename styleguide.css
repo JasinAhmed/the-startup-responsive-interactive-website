@@ -1,0 +1,159 @@
+:root {
+  /* Werktijden.nl kleuren (RGB) */
+  --primary: rgb(5, 150, 105);
+  --container: rgb(255, 255, 255);
+  --section-bg: rgb(249, 250, 251);
+  --light-text: rgb(255, 255, 255);
+  --dark-text: rgb(57, 65, 80);
+  --border: rgb(229, 231, 235);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--section-bg);
+  color: var(--dark-text);
+  line-height: 1.5;
+}
+
+/* Layout */
+.header {
+  background: var(--container);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+}
+
+.header h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+.nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  background: var(--container);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--dark-text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: var(--container);
+  font-weight: 600;
+}
+
+.nav a:hover {
+  background: var(--section-bg);
+}
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.section {
+  background: var(--container);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Kleuren */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.color-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--container);
+}
+
+.color-card h3 {
+  margin: 0.75rem 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.color-card p {
+  margin: 0;
+  color: var(--dark-text);
+}
+
+.color-box {
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+/* Kleurblokken */
+.primary { background: var(--primary); }
+.container { background: var(--container); }
+.section-bg { background: var(--section-bg); }
+.light-text { background: var(--light-text); }
+.dark-text { background: var(--dark-text); }
+.border { background: var(--border); }
+
+/* Font demo */
+.font-demo {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--section-bg);
+}
+
+.font-big {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--light-text);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-secondary {
+  background: var(--container);
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--section-bg);
+}
