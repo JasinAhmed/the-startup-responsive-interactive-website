@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+
   <title>Werken bij – Vacatures | Werktijden</title>
-  <meta name="description" content="Bekijk de openstaande vacatures bij Werktijden.">
+  <meta name="Beschrijving" content="Bekijk de openstaande vacatures bij Werktijden.nl.">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <a href="/">werktijden.nl</a>
+  <!-- Site header -->
+  <header class="site-header">
+    <a href="/" class="site-logo">werktijden.nl</a>
 
-    <nav>
-      <button type="button">☰</button>
+    <nav class="main-nav">
+      <button type="button" aria-label="Menu">☰</button>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Vacatures</a></li>
@@ -26,7 +29,8 @@
 
   <main>
 
-    <header>
+    <!-- Pagina-intro -->
+    <header class="page-header">
       <h1>Werken bij</h1>
       <p>
         Bekijk de openstaande vacatures bij Werktijden.nl en ontdek de mogelijkheden
@@ -34,143 +38,138 @@
       </p>
     </header>
 
-    <section>
+    <!-- Vacature overzicht -->
+    <section class="vacature-overzicht">
       <h2>Openstaande vacatures</h2>
 
-      <article>
-        <p><strong>Nieuw</strong></p>
+      <article class="vacature">
+        <p class="vacature-badge">Nieuw</p>
 
         <h3>Klantadviseur</h3>
         <p>Werktijden.nl B.V. · Amsterdam</p>
 
-        <ul>
+        <ul class="vacature-info">
           <li>Fulltime</li>
           <li>Parttime</li>
           <li>ma–vr</li>
           <li>32–40 uur</li>
         </ul>
 
-        <p><strong>€ 2.500 – € 4.000 per maand</strong></p>
+        <p class="vacature-salaris">€ 2.500 – € 4.000 per maand</p>
 
         <p>
-          <a href="vacature.html">Bekijk vacature</a>
+          <a href="Vacature.html">Bekijk vacature</a>
         </p>
       </article>
 
-      <hr>
-
-      <article>
-        <p><strong>Nieuw</strong></p>
+      <article class="vacature">
+        <p class="vacature-badge">Nieuw</p>
 
         <h3>Frontend Developer</h3>
         <p>Werktijden.nl B.V. · Amsterdam</p>
 
-        <ul>
+        <ul class="vacature-info">
           <li>Fulltime</li>
           <li>Hybride</li>
           <li>32–40 uur</li>
         </ul>
 
-        <p><strong>€ 3.000 – € 4.500 per maand</strong></p>
+        <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
 
         <p>
-          <a href="vacature.html">Bekijk vacature</a>
+          <a href="Vacature.html">Bekijk vacature</a>
         </p>
       </article>
-      <hr>
-         <article>
-        <p><strong>Nieuw</strong></p>
+
+      <article class="vacature">
+        <p class="vacature-badge">Nieuw</p>
 
         <h3>Marketing Coördinator</h3>
         <p>Werktijden.nl B.V. · Amsterdam</p>
 
-        <ul>
+        <ul class="vacature-info">
           <li>Fulltime</li>
           <li>Hybride</li>
           <li>32–40 uur</li>
         </ul>
 
-        <p><strong>€ 3.000 – € 4.500 per maand</strong></p>
+        <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
 
         <p>
-          <a href="vacature.html">Bekijk vacature</a>
+          <a href="Vacature.html">Bekijk vacature</a>
         </p>
       </article>
-      <hr>
 
     </section>
 
   </main>
 
- <footer class="footer">
-  <div class="footer-container">
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
 
-    <!-- Logo & info -->
-    <div class="footer-brand">
-      <h2 class="footer-logo">werktijden.nl</h2>
-      <p class="footer-phone">088-0550550</p>
-      <p class="footer-links">
-        <a href="#">Privacy</a> | <a href="#">Voorwaarden</a>
-      </p>
-      <p class="footer-copy">Copyright © 2026 Werktijden.nl</p>
+      <div class="footer-brand">
+        <h2 class="footer-logo">werktijden.nl</h2>
+        <p>088-0550550</p>
+        <p>
+          <a href="#">Privacy</a> |
+          <a href="#">Voorwaarden</a>
+        </p>
+        <p>Copyright © 2026 Werktijden.nl</p>
+      </div>
+
+      <nav class="footer-column">
+        <h3>Functies</h3>
+        <ul>
+          <li><a href="#">Personeelsplanning</a></li>
+          <li><a href="#">Verlofregistratie</a></li>
+          <li><a href="#">Urenregistratie</a></li>
+          <li><a href="#">Rooster maken</a></li>
+          <li><a href="#">Prikklok</a></li>
+          <li><a href="#">Mobiele app</a></li>
+          <li><a href="#">Evenementen planning</a></li>
+          <li><a href="#">Verzuimregistratie</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-column">
+        <h3>Branches</h3>
+        <ul>
+          <li><a href="#">Horeca en hospitality</a></li>
+          <li><a href="#">Winkel, retail en detailhandel</a></li>
+          <li><a href="#">Productie</a></li>
+          <li><a href="#">Recreatie</a></li>
+          <li><a href="#">Transport en warehousing</a></li>
+          <li><a href="#">Zorg en gezondheid</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-column">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#">Aanmelden</a></li>
+          <li><a href="#">Inloggen</a></li>
+          <li><a href="#">Tarieven</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Koppelingen</a></li>
+          <li><a href="#">Vergelijkingen</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-column">
+        <h3>Werktijden.nl</h3>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Over ons</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Klanten</a></li>
+          <li><a href="#">Demo inplannen</a></li>
+          <li><a href="#">Vacatures</a></li>
+        </ul>
+      </nav>
+
     </div>
-
-    <!-- Functies -->
-    <div class="footer-column">
-      <h3>Functies</h3>
-      <ul>
-        <li>Personeelsplanning</li>
-        <li>Verlofregistratie</li>
-        <li>Urenregistratie</li>
-        <li>Rooster maken</li>
-        <li>Prikklok</li>
-        <li>Mobiele app</li>
-        <li>Evenementen planning</li>
-        <li>Verzuimregistratie</li>
-      </ul>
-    </div>
-
-    <!-- Branches -->
-    <div class="footer-column">
-      <h3>Branches</h3>
-      <ul>
-        <li>Horeca en hospitality</li>
-        <li>Winkel, retail en detailhandel</li>
-        <li>Productie</li>
-        <li>Recreatie</li>
-        <li>Transport en warehousing</li>
-        <li>Zorg en gezondheid</li>
-      </ul>
-    </div>
-
-    <!-- Product -->
-    <div class="footer-column">
-      <h3>Product</h3>
-      <ul>
-        <li>Aanmelden</li>
-        <li>Inloggen</li>
-        <li>Tarieven</li>
-        <li>Help Center</li>
-        <li>Koppelingen</li>
-        <li>Vergelijkingen</li>
-      </ul>
-    </div>
-
-    <!-- Werktijden.nl -->
-    <div class="footer-column">
-      <h3>Werktijden.nl</h3>
-      <ul>
-        <li>Contact</li>
-        <li>Over ons</li>
-        <li>Blog</li>
-        <li>Klanten</li>
-        <li>Demo inplannen</li>
-        <li>Vacatures</li>
-      </ul>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
