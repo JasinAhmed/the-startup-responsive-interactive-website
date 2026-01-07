@@ -1,0 +1,136 @@
+/* =========================
+   WERKTIJDEN.NL – STYLEGUIDE
+   ========================= */
+
+:root {
+  /* Kleuren */
+  --wt-primary: rgb(5, 150, 105);
+  --wt-container: rgb(255, 255, 255);
+  --wt-section-bg: rgb(249, 250, 251);
+
+  --wt-text-dark: rgb(57, 65, 80);
+  --wt-text-light: rgb(255, 255, 255);
+
+  --wt-border: rgb(229, 231, 235);
+
+  /* Overig */
+  --wt-radius: 0.5rem;
+  --wt-font: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--wt-font);
+  background: var(--wt-section-bg);
+  color: var(--wt-text-dark);
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Layout */
+.wt-header {
+  margin-bottom: 2rem;
+}
+
+.wt-main {
+  display: grid;
+  gap: 2rem;
+}
+
+.wt-section {
+  background: var(--wt-container);
+  border: 1px solid var(--wt-border);
+  border-radius: var(--wt-radius);
+  padding: 1.5rem;
+}
+
+/* Kleuren */
+.wt-color-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.wt-color-box {
+  min-width: 160px;
+  padding: 0.75rem;
+  border-radius: var(--wt-radius);
+  border: 1px solid var(--wt-border);
+  font-family: monospace;
+}
+
+/* Kleur classes */
+.wt-primary {
+  background: var(--wt-primary);
+  color: var(--wt-text-light);
+}
+
+.wt-container {
+  background: var(--wt-container);
+}
+
+.wt-section-bg {
+  background: var(--wt-section-bg);
+}
+
+.wt-text-dark {
+  background: var(--wt-text-dark);
+  color: var(--wt-text-light);
+}
+
+.wt-border {
+  background: var(--wt-border);
+}
+
+/* Font demo */
+.wt-font-demo {
+  border: 1px solid var(--wt-border);
+  padding: 1rem;
+  border-radius: var(--wt-radius);
+}
+
+/* Buttons */
+.wt-btn {
+  padding: 0.6rem 1rem;
+  border-radius: var(--wt-radius);
+  border: 1px solid var(--wt-border);
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.wt-btn.wt-primary {
+  background: var(--wt-primary);
+  color: var(--wt-text-light);
+  border: none;
+}
+
+.wt-btn.wt-secondary {
+  background: var(--wt-container);
+  color: var(--wt-text-dark);
+}
+
+/* Formulier */
+.wt-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.wt-input,
+.wt-textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: var(--wt-radius);
+  border: 1px solid var(--wt-border);
+  font-family: var(--wt-font);
+}
+
+.wt-textarea {
+  resize: none;
+  height: 100px;
+}
