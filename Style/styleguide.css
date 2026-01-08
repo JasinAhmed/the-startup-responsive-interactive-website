@@ -1,6 +1,15 @@
 
    /* WERKTIJDEN.NL – STYLEGUIDE */
-   
+  
+
+/* Font: Inter */
+@font-face {
+  font-family: "Inter";
+  src: url("./Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 
 :root {
   /* Kleuren */
@@ -14,10 +23,10 @@
   --wt-border: rgb(229, 231, 235);
 
   /* Overig */
-  --wt-radius: 0.5rem;
   --wt-font: "Inter", sans-serif;
 }
 
+/* Base */
 * {
   box-sizing: border-box;
 }
@@ -44,7 +53,6 @@ body {
 .wt-section {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
-  border-radius: var(--wt-radius);
   padding: 1.5rem;
 }
 
@@ -59,7 +67,6 @@ body {
 .wt-color-box {
   min-width: 160px;
   padding: 0.75rem;
-  border-radius: var(--wt-radius);
   border: 1px solid var(--wt-border);
   font-family: monospace;
 }
@@ -87,21 +94,21 @@ body {
   background: var(--wt-border);
 }
 
-/* Font demo */
+/* Font */
 .wt-font-demo {
   border: 1px solid var(--wt-border);
   padding: 1rem;
-  border-radius: var(--wt-radius);
 }
 
 /* Buttons */
 .wt-btn {
   padding: 0.6rem 1rem;
-  border-radius: var(--wt-radius);
   border: 1px solid var(--wt-border);
   font-weight: 600;
   cursor: pointer;
   margin-right: 0.5rem;
+  background: var(--wt-container);
+  color: var(--wt-text-dark);
 }
 
 .wt-btn.wt-primary {
@@ -125,7 +132,6 @@ body {
 .wt-textarea {
   width: 100%;
   padding: 0.6rem;
-  border-radius: var(--wt-radius);
   border: 1px solid var(--wt-border);
   font-family: var(--wt-font);
 }
