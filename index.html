@@ -19,7 +19,7 @@
 
     <nav class="main-nav">
       <!-- Hier komt een interactie met de button -->
-      <button type="button">☰</button>
+      <button type="button" aria-label="Menu"> ☰ <span></span></button>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Vacatures</a></li>
@@ -41,28 +41,29 @@
       </p>
     </header>
 
-    <!-- Vacatures -->
-    <section class="vacature-overzicht">
-      <h2>Openstaande vacatures</h2>
+    <!-- Vacature -->
+ <article class="vacature">
+  <header>
+    <hgroup>
+      <p class="vacature-badge">Nieuw</p>
+      <h3>Klantadviseur</h3>
+    </hgroup>
 
-      <!-- Vacature 1 -->
-      <article class="vacature">
-        <p class="vacature-badge">Nieuw</p>
+    <p>Werktijden.nl B.V. · Amsterdam</p>
+  </header>
 
-        <h3>Klantadviseur</h3>
-        <p>Werktijden.nl B.V. · Amsterdam</p>
+  <ul class="vacature-info">
+    <li>Fulltime</li>
+    <li>Parttime</li>
+    <li>ma–vr</li>
+    <li>32–40 uur</li>
+  </ul>
 
-        <ul class="vacature-info">
-          <li>Fulltime</li>
-          <li>Parttime</li>
-          <li>ma–vr</li>
-          <li>32–40 uur</li>
-        </ul>
+  <p class="vacature-salaris">€ 2.500 – € 4.000 per maand</p>
 
-        <p class="vacature-salaris">€ 2.500 – € 4.000 per maand</p>
+  <a href="Vacature.html">Bekijk vacature</a>
+</article>
 
-        <a href="Vacature.html">Bekijk vacature</a>
-      </article>
 
       <!-- Vacature 2 -->
       <article class="vacature">
