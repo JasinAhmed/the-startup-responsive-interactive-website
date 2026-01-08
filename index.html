@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Werken bij – Vacatures | Werktijden</title>
-  <meta name="Beschrijving" content="Bekijk de openstaande vacatures bij Werktijden.nl.">
+  <meta name="description" content="Bekijk de openstaande vacatures bij Werktijden.nl.">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Style/styleguide.css">
+  <link rel="stylesheet" href="Style/style.css">
 </head>
 
 <body>
 
-  <!-- Site header -->
   <header class="site-header">
     <a href="/" class="site-logo">werktijden.nl</a>
 
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Hoofdnavigatie">
       <button type="button" aria-label="Menu">☰</button>
       <ul>
         <li><a href="#">Home</a></li>
@@ -29,7 +29,6 @@
 
   <main>
 
-    <!-- Pagina-intro -->
     <header class="page-header">
       <h1>Werken bij</h1>
       <p>
@@ -38,14 +37,13 @@
       </p>
     </header>
 
-    <!-- Vacature overzicht -->
-    <section class="vacature-overzicht">
-      <h2>Openstaande vacatures</h2>
+    <section class="vacature-overzicht" aria-labelledby="openstaande-vacatures">
+      <h2 id="openstaande-vacatures">Openstaande vacatures</h2>
 
-      <article class="vacature">
+      <article class="vacature" aria-labelledby="vac1-title">
         <p class="vacature-badge">Nieuw</p>
 
-        <h3>Klantadviseur</h3>
+        <h3 id="vac1-title">Klantadviseur</h3>
         <p>Werktijden.nl B.V. · Amsterdam</p>
 
         <ul class="vacature-info">
@@ -62,10 +60,10 @@
         </p>
       </article>
 
-      <article class="vacature">
+      <article class="vacature" aria-labelledby="vac2-title">
         <p class="vacature-badge">Nieuw</p>
 
-        <h3>Frontend Developer</h3>
+        <h3 id="vac2-title">Frontend Developer</h3>
         <p>Werktijden.nl B.V. · Amsterdam</p>
 
         <ul class="vacature-info">
@@ -81,10 +79,10 @@
         </p>
       </article>
 
-      <article class="vacature">
+      <article class="vacature" aria-labelledby="vac3-title">
         <p class="vacature-badge">Nieuw</p>
 
-        <h3>Marketing Coördinator</h3>
+        <h3 id="vac3-title">Marketing Coördinator</h3>
         <p>Werktijden.nl B.V. · Amsterdam</p>
 
         <ul class="vacature-info">
@@ -104,7 +102,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
 
@@ -118,7 +115,7 @@
         <p>Copyright © 2026 Werktijden.nl</p>
       </div>
 
-      <nav class="footer-column">
+      <nav class="footer-column" aria-label="Functies">
         <h3>Functies</h3>
         <ul>
           <li><a href="#">Personeelsplanning</a></li>
@@ -132,7 +129,7 @@
         </ul>
       </nav>
 
-      <nav class="footer-column">
+      <nav class="footer-column" aria-label="Branches">
         <h3>Branches</h3>
         <ul>
           <li><a href="#">Horeca en hospitality</a></li>
@@ -144,7 +141,7 @@
         </ul>
       </nav>
 
-      <nav class="footer-column">
+      <nav class="footer-column" aria-label="Product">
         <h3>Product</h3>
         <ul>
           <li><a href="#">Aanmelden</a></li>
@@ -156,7 +153,7 @@
         </ul>
       </nav>
 
-      <nav class="footer-column">
+      <nav class="footer-column" aria-label="Werktijden.nl">
         <h3>Werktijden.nl</h3>
         <ul>
           <li><a href="#">Contact</a></li>

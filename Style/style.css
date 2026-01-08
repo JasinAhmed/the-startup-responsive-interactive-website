@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  background: var(--wt-section-bg);
+  color: var(--wt-text-dark);
+  font-family: var(--wt-font);
+}
+
+main {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--wt-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  background: var(--wt-container);
+  border-bottom: 1px solid var(--wt-border);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--wt-primary);
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-nav button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--wt-border);
+  background: var(--wt-container);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.main-nav a {
+  color: var(--wt-text-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Page header */
+.page-header {
+  background: var(--wt-container);
+  border: 1px solid var(--wt-border);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 18px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-header p {
+  margin: 0;
+}
+
+/* Vacature overzicht */
+.vacature-overzicht {
+  margin-top: 16px;
+}
+
+.vacature-overzicht > h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+/* Vacature kaart (bubbel look) */
+.vacature {
+  background: var(--wt-container);
+  border: 1px solid var(--wt-border);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 16px;
+
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.vacature::-webkit-scrollbar {
+  width: 10px;
+}
+
+.vacature::-webkit-scrollbar-thumb {
+  background: var(--wt-border);
+  border-radius: 999px;
+}
+
+.vacature::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Badge */
+.vacature-badge {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(5, 150, 105, 0.12);
+  color: var(--wt-primary);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* Titel */
+.vacature h3 {
+  margin: 8px 0 6px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.vacature p {
+  margin: 0 0 12px;
+}
+
+/* Bubble info list */
+.vacature-info {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vacature-info li {
+  background: var(--wt-section-bg);
+  border: 1px solid var(--wt-border);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Salaris bubble */
+.vacature-salaris {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--wt-section-bg);
+  border: 1px solid var(--wt-border);
+  font-weight: 800;
+}
+
+/* Button link */
+.vacature a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--wt-primary);
+  color: var(--wt-text-light);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.vacature a:hover {
+  opacity: 0.95;
+  text-decoration: none;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  background: rgb(16, 24, 40);
+  color: var(--wt-text-light);
+  padding: 20px 16px;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer a:hover {
+  color: var(--wt-text-light);
+}
+
+.footer-logo {
+  margin: 0 0 8px;
+  color: var(--wt-text-light);
+}
+
+.footer-brand {
+  margin-bottom: 18px;
+}
+
+.footer-column {
+  margin-bottom: 18px;
+}
+
+.footer-column h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
