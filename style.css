@@ -5,25 +5,12 @@
 body {
   margin: 0;
   padding: 0;
-  max-width: none;
-  background: var(--wt-section-bg);
-  color: var(--wt-text-dark);
-  font-family: var(--wt-font);
 }
 
 main {
   padding: 16px;
   max-width: 900px;
   margin: 0 auto;
-}
-
-a {
-  color: var(--wt-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* Header */
@@ -108,22 +95,6 @@ a:hover {
   border-radius: 24px;
   padding: 18px;
   margin-bottom: 16px;
-
-  max-height: 420px;
-  overflow-y: auto;
-}
-
-.vacature::-webkit-scrollbar {
-  width: 10px;
-}
-
-.vacature::-webkit-scrollbar-thumb {
-  background: var(--wt-border);
-  border-radius: 999px;
-}
-
-.vacature::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 /* Badge */
@@ -245,6 +216,7 @@ a:hover {
 .footer-column li {
   margin-bottom: 8px;
 }
+
 .visually-hidden{
   position: absolute;
   width: 1px;
