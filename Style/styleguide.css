@@ -1,6 +1,5 @@
+/* WERKTIJDEN.NL – STYLEGUIDE */
 
-   /* WERKTIJDEN.NL – STYLEGUIDE */
-  
 
 /* Font: Inter */
 @font-face {
@@ -139,26 +138,21 @@ body {
   border: none;
 }
 
-.wt-btn.wt-secondary {
-  background: var(--wt-container);
-  color: var(--wt-text-dark);
-}
-
 /* Formulier */
 .wt-form {
   display: grid;
   gap: 1rem;
 }
 
-.wt-input,
-.wt-textarea {
+.wt-form input,
+.wt-form textarea {
   width: 100%;
   padding: 0.6rem;
   border: 1px solid var(--wt-border);
   font-family: var(--wt-font);
 }
 
-.wt-textarea {
+.wt-form textarea {
   resize: none;
   height: 100px;
 }
