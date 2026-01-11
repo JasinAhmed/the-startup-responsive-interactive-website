@@ -19,15 +19,15 @@
 
     <nav class="main-nav">
       <!-- Hier komt een interactie met de button -->
-      <button class="menu-open" type="button" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">☰</button>
+      <button class="menu-open" type="button">☰</button>
     </nav>
   </header>
 
   <!-- Mobile menu -->
-  <section class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <section class="mobile-menu" id="mobile-menu">
     <header class="mobile-menu-header">
       <a href="/" class="mobile-menu-logo">werktijden.nl</a>
-      <button class="menu-close" type="button" aria-label="Sluit menu">✕</button>
+      <button class="menu-close" type="button">✕</button>
     </header>
 
     <ul class="mobile-menu-list">
@@ -45,7 +45,7 @@
       <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
     </section>
 
-    <a class="chat-fab" href="#" aria-label="Chat">💬</a>
+    <a class="chat-fab" href="#">💬</a>
   </section>
 
   <!-- Main content -->
@@ -63,7 +63,7 @@
     <!-- Vacature slider -->
     <section class="vacature-slider">
 
-      <section class="slider-track" tabindex="0">
+      <section class="slider-track">
 
         <!-- Vacature 1 -->
         <article class="vacature">
@@ -137,10 +137,11 @@
         </article>
 
       </section>
+
       <section class="slider-dots">
-        <button class="dot is-active" type="button" aria-label="Ga naar vacature 1"></button>
-        <button class="dot" type="button" aria-label="Ga naar vacature 2"></button>
-        <button class="dot" type="button" aria-label="Ga naar vacature 3"></button>
+        <button class="dot is-active" type="button"></button>
+        <button class="dot" type="button"></button>
+        <button class="dot" type="button"></button>
       </section>
 
     </section>
@@ -214,8 +215,5 @@
 
     </section>
   </footer>
-
-  <script src="script/script.js"></script>
-
 </body>
 </html>
