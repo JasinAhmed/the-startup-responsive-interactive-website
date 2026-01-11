@@ -305,17 +305,31 @@ main {
 }
 
 .dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.dot::after {
+  content: "";
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  border: none;
   background: var(--wt-border);
-  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.dot.is-active {
-  background: var(--wt-primary);
+.dot.is-active::after {
+  background: rgb(4, 120, 87);
 }
+
 
 /* Mobile menu */
 .mobile-menu {
