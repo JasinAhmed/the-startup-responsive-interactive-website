@@ -15,19 +15,38 @@
 
   <!-- Header -->
   <header class="site-header">
-    <a href="/" class="site-logo">werktijden.nl</a>
+    <a href="assets/logowerk.svg" class="site-logo">werktijden.nl</a>
 
     <nav class="main-nav">
       <!-- Hier komt een interactie met de button -->
-      <button type="button" aria-label="Menu">☰</button>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Vacatures</a></li>
-        <li><a href="#">Over Werktijden</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <button class="menu-open" type="button" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">☰</button>
     </nav>
   </header>
+
+  <!-- Mobile menu -->
+  <section class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <header class="mobile-menu-header">
+      <a href="/" class="mobile-menu-logo">werktijden.nl</a>
+      <button class="menu-close" type="button" aria-label="Sluit menu">✕</button>
+    </header>
+
+    <ul class="mobile-menu-list">
+      <li><a href="#">Functies</a></li>
+      <li><a href="#">Branches</a></li>
+      <li><a href="#">Klanten</a></li>
+      <li><a href="#">Koppelingen</a></li>
+      <li><a href="#">Tarieven</a></li>
+      <li><a href="#">Plan een demo</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <section class="mobile-menu-bottom">
+      <a class="mobile-btn mobile-btn-outline" href="#">Inloggen</a>
+      <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
+    </section>
+
+    <a class="chat-fab" href="#" aria-label="Chat">💬</a>
+  </section>
 
   <!-- Main content -->
   <main>
@@ -41,65 +60,88 @@
       </p>
     </header>
 
-    <section class="vacature-grid">
+    <!-- Vacature slider -->
+    <section class="vacature-slider">
 
-      <!-- Vacature -->
-      <article class="vacature">
-        <header>
-          <p class="vacature-badge">Nieuw</p>
-          <h2>Klantadviseur</h2>
-          <p>Werktijden.nl B.V. · Amsterdam</p>
-        </header>
+      <section class="slider-track" tabindex="0">
 
-        <ul class="vacature-info">
-          <li>Fulltime</li>
-          <li>Parttime</li>
-          <li>ma–vr</li>
-          <li>32–40 uur</li>
-        </ul>
+        <!-- Vacature 1 -->
+        <article class="vacature">
+          <header>
+            <p class="vacature-badge">Nieuw</p>
+            <h2>Klantadviseur</h2>
+            <p>Werktijden.nl B.V. · Amsterdam</p>
+          </header>
 
-        <p class="vacature-salaris">€ 2.500 – € 4.000 per maand</p>
+          <ul class="vacature-info">
+            <li>Fulltime</li>
+            <li>Parttime</li>
+            <li>ma–vr</li>
+            <li>32–40 uur</li>
+          </ul>
 
-        <a href="Vacature.html">Bekijk vacature</a>
-      </article>
+          <p class="vacature-salaris">€ 2.500 – € 4.000 per maand</p>
 
-      <!-- Vacature 2 -->
-      <article class="vacature">
-        <header>
-          <p class="vacature-badge">Nieuw</p>
-          <h2>Frontend Developer</h2>
-          <p>Werktijden.nl B.V. · Amsterdam</p>
-        </header>
+          <p class="vacature-tekst">
+            Ben jij op zoek naar een functie waarin jouw communicatievaardigheden echt tot hun recht komen?
+            Heb je ervaring in klantcontact binnen een B2B-omgeving...
+          </p>
 
-        <ul class="vacature-info">
-          <li>Fulltime</li>
-          <li>Hybride</li>
-          <li>32–40 uur</li>
-        </ul>
+          <a href="Vacature.html">Vacature bekijken</a>
+        </article>
 
-        <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
+        <!-- Vacature 2 -->
+        <article class="vacature">
+          <header>
+            <p class="vacature-badge">Nieuw</p>
+            <h2>Frontend Developer</h2>
+            <p>Werktijden.nl B.V. · Amsterdam</p>
+          </header>
 
-        <a href="Vacature.html">Bekijk vacature</a>
-      </article>
+          <ul class="vacature-info">
+            <li>Fulltime</li>
+            <li>Hybride</li>
+            <li>32–40 uur</li>
+          </ul>
 
-      <!-- Vacature 3 -->
-      <article class="vacature">
-        <header>
-          <p class="vacature-badge">Nieuw</p>
-          <h2>Marketing Coördinator</h2>
-          <p>Werktijden.nl B.V. · Amsterdam</p>
-        </header>
+          <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
 
-        <ul class="vacature-info">
-          <li>Fulltime</li>
-          <li>Hybride</li>
-          <li>32–40 uur</li>
-        </ul>
+          <p class="vacature-tekst">
+            Werk aan moderne interfaces, verbeter de user experience en bouw mee aan een product dat dagelijks gebruikt wordt...
+          </p>
 
-        <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
+          <a href="Vacature.html">Vacature bekijken</a>
+        </article>
 
-        <a href="Vacature.html">Bekijk vacature</a>
-      </article>
+        <!-- Vacature 3 -->
+        <article class="vacature">
+          <header>
+            <p class="vacature-badge">Nieuw</p>
+            <h2>Marketing Coördinator</h2>
+            <p>Werktijden.nl B.V. · Amsterdam</p>
+          </header>
+
+          <ul class="vacature-info">
+            <li>Fulltime</li>
+            <li>Hybride</li>
+            <li>32–40 uur</li>
+          </ul>
+
+          <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
+
+          <p class="vacature-tekst">
+            Zet campagnes op, analyseer resultaten en zorg dat Werktijden.nl online beter zichtbaar wordt...
+          </p>
+
+          <a href="Vacature.html">Vacature bekijken</a>
+        </article>
+
+      </section>
+      <section class="slider-dots">
+        <button class="dot is-active" type="button" aria-label="Ga naar vacature 1"></button>
+        <button class="dot" type="button" aria-label="Ga naar vacature 2"></button>
+        <button class="dot" type="button" aria-label="Ga naar vacature 3"></button>
+      </section>
 
     </section>
 
@@ -107,7 +149,6 @@
 
   <!-- Footer -->
   <footer class="footer">
-
     <section class="footer-container">
       <h2 class="visually-hidden">Footer</h2>
 
@@ -172,8 +213,9 @@
       </section>
 
     </section>
-
   </footer>
+
+  <script src="script/script.js"></script>
 
 </body>
 </html>
