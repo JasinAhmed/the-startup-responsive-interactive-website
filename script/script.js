@@ -9,6 +9,10 @@ const functiesItem = document.querySelector('.functies');
 const branchesButton = document.querySelector('.branches-btn');
 const branchesItem = document.querySelector('.branches');
 
+const sliderTrack = document.querySelector('.slider-track');
+const slides = document.querySelectorAll('.slider-track .vacature');
+const dots = document.querySelectorAll('.dot');
+
 // 2. MENU OPENEN
 openButton.addEventListener('click', () => {
   mobileMenu.classList.add('is-open');
@@ -32,3 +36,29 @@ branchesButton.addEventListener('click', () => {
   branchesItem.classList.toggle('open');
   functiesItem.classList.remove('open');
 });
+
+// 6. SLIDER DOTS (KLIK + SCROLL)
+if (sliderTrack && slides.length && dots.length) {
+
+  // actief bolletje aanpassen
+  function setActiveDot(index) {
+    dots.forEach(d => d.classList.remove('is-active'));
+    dots[index].classList.add('is-active');
+  }
+
+  // scroll -> dot mee laten gaan
+  sliderTrack.addEventListener('scroll', () => {
+    const slideWidth = slides[0].offsetWidth;
+    const index = Math.round(sliderTrack.scrollLeft / slideWidth);
+    setActiveDot(index);
+  });
+
+  // klik -> naar slide + dot actief
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      const slideWidth = slides[0].offsetWidth;
+      sliderTrack.scrollLeft = index * slideWidth;
+      setActiveDot(index);
+    });
+  });
+}
