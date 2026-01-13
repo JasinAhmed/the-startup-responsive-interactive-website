@@ -3,6 +3,12 @@ const openButton = document.querySelector('.menu-open');
 const closeButton = document.querySelector('.menu-close');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+const functiesButton = document.querySelector('.functies-btn');
+const functiesItem = document.querySelector('.functies');
+
+const branchesButton = document.querySelector('.branches-btn');
+const branchesItem = document.querySelector('.branches');
+
 // 2. MENU OPENEN
 openButton.addEventListener('click', () => {
   mobileMenu.classList.add('is-open');
@@ -11,4 +17,18 @@ openButton.addEventListener('click', () => {
 // 3. MENU SLUITEN
 closeButton.addEventListener('click', () => {
   mobileMenu.classList.remove('is-open');
+  functiesItem.classList.remove('open');
+  branchesItem.classList.remove('open');
+});
+
+// 4. FUNCTIES OPENEN / SLUITEN
+functiesButton.addEventListener('click', () => {
+  functiesItem.classList.toggle('open');
+  branchesItem.classList.remove('open');
+});
+
+// 5. BRANCHES OPENEN / SLUITEN
+branchesButton.addEventListener('click', () => {
+  branchesItem.classList.toggle('open');
+  functiesItem.classList.remove('open');
 });

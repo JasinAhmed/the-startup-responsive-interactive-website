@@ -377,13 +377,15 @@ main {
   margin: 0;
 }
 
-.mobile-menu-list li {
+/* alleen eerste laag LI's krijgen de border */
+.mobile-menu-list > li {
   border-bottom: 1px solid var(--wt-border);
 }
 
+/* padding zodat alles recht staat */
 .mobile-menu-list a {
   display: block;
-  padding: 18px 0;
+  padding: 18px 16px; /* was 18px 0 */
   color: var(--wt-text-dark);
   font-weight: 700;
   text-decoration: none;
@@ -431,4 +433,74 @@ main {
   text-decoration: none;
   font-size: 26px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* FUNCTIES + BRANCHES Accordion */
+
+/* knop standaard (niet groen) */
+.accordion-btn{
+  width: 100%;
+  padding: 18px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  font: inherit;
+  color: var(--wt-text-dark);
+  font-weight: 700;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* pijltje standaard */
+.arrow{
+  font-size: 18px;
+  transition: transform 0.2s ease;
+  color: var(--wt-text-dark);
+}
+
+/* submenu standaard dicht */
+.submenu{
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: none;
+}
+
+/* submenu items */
+.submenu li{
+  border-bottom: 1px solid var(--wt-border);
+}
+
+/*icoon + tekst netjes op 1 lijn */
+.submenu a{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  font-weight: 700;
+  color: var(--wt-text-dark);
+  text-decoration: none;
+}
+
+/* OPEN STATE (groen) */
+.accordion.open .accordion-btn{
+  background: rgba(5, 150, 105, 0.12);
+  color: var(--wt-primary);
+  border: 1px solid var(--wt-border);
+}
+
+/* pijltje groen + draaien */
+.accordion.open .arrow{
+  color: var(--wt-primary);
+  transform: rotate(180deg);
+}
+
+/* submenu zichtbaar */
+.accordion.open .submenu{
+  display: block;
 }

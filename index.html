@@ -33,8 +33,44 @@
     </header>
 
     <ul class="mobile-menu-list">
-      <li><a href="#">Functies</a></li>
-      <li><a href="#">Branches</a></li>
+
+      <!-- Functies (uitklapbaar) -->
+      <li class="accordion functies">
+        <button class="accordion-btn functies-btn" type="button">
+          Functies <span class="arrow">⌄</span>
+        </button>
+
+        <ul class="submenu">
+          <li><a href="#">🕒 Personeelsplanning</a></li>
+          <li><a href="#">🎒 Verlofregistratie</a></li>
+          <li><a href="#">📋 Urenregistratie</a></li>
+          <li><a href="#">⏱️ Prikklok</a></li>
+          <li><a href="#">🗓️ Rooster maken</a></li>
+          <li><a href="#">📱 Mobiele app</a></li>
+          <li><a href="#">📅 Evenementen planning</a></li>
+          <li><a href="#">🛡️ Verzuimregistratie</a></li>
+          <li><a href="#"><b>Bekijk alle functies</b></a></li>
+        </ul>
+      </li>
+
+      <!-- Branches (uitklapbaar) -->
+      <li class="accordion branches">
+        <button class="accordion-btn branches-btn" type="button">
+          Branches <span class="arrow">⌄</span>
+        </button>
+
+        <ul class="submenu">
+          <li><a href="#">🧪 Horeca en hospitality</a></li>
+          <li><a href="#">🧺 Winkel, retail en detailhandel</a></li>
+          <li><a href="#">📦 Productie</a></li>
+          <li><a href="#">🏖️ Recreatie</a></li>
+          <li><a href="#">🚚 Transport en warehousing</a></li>
+          <li><a href="#">🛡️ Zorg en gezondheid</a></li>
+          <li><a href="#"><b>Bekijk alle branches</b></a></li>
+        </ul>
+      </li>
+
+      <!-- normale items -->
       <li><a href="#">Klanten</a></li>
       <li><a href="#">Koppelingen</a></li>
       <li><a href="#">Tarieven</a></li>
@@ -223,6 +259,7 @@
 
     </section>
   </footer>
+
   <script src="script/script.js"></script>
 </body>
 </html>
