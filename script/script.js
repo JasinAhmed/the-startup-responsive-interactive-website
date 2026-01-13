@@ -1,16 +1,14 @@
 // 1. ELEMENTEN SELECTEREN
-let openButton = document.querySelector('.menu-open')
-let closeButton = document.querySelector('.menu-close')
-let mobileMenu = document.querySelector('.mobile-menu')
+const openButton = document.querySelector('.menu-open');
+const closeButton = document.querySelector('.menu-close');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-// 2. EVENT TOEVOEGEN
-hamburger.addEventListener("click", function () {
-
-  // 3. ACTIE: MENU OPEN/DICHT
-  const isOpen = navList.classList.toggle("open");
-
-  hamburger.classList.toggle("open", isOpen);
-  document.body.classList.toggle("menu-open", isOpen);
+// 2. MENU OPENEN
+openButton.addEventListener('click', () => {
+  mobileMenu.classList.add('is-open');
 });
 
- 
+// 3. MENU SLUITEN
+closeButton.addEventListener('click', () => {
+  mobileMenu.classList.remove('is-open');
+});
