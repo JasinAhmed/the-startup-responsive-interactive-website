@@ -21,6 +21,8 @@ openButton.addEventListener('click', () => {
 // 3. MENU SLUITEN
 closeButton.addEventListener('click', () => {
   mobileMenu.classList.remove('is-open');
+
+  // alles ook dichtzetten
   functiesItem.classList.remove('open');
   branchesItem.classList.remove('open');
 });
@@ -37,25 +39,26 @@ branchesButton.addEventListener('click', () => {
   functiesItem.classList.remove('open');
 });
 
-// // 6. SLIDER DOTS (KLIK + SCROLL)
-// if (sliderTrack && slides.length && dots.length) {
+// 6. SLIDER DOTS (KLIK + SCROLL)
+// if is nodig zodat je geen error krijgt als je dit op een pagina zonder slider gebruikt.
+if (sliderTrack && slides.length && dots.length) {
 
-//   function setActiveDot(index) {
-//     dots.forEach(d => d.classList.remove('is-active'));
-//     if (dots[index]) dots[index].classList.add('is-active');
-//   }
+  function setActiveDot(index) {
+    dots.forEach(d => d.classList.remove('is-active'));
+    if (dots[index]) dots[index].classList.add('is-active');
+  }
 
-//   sliderTrack.addEventListener('scroll', () => {
-//     const slideWidth = slides[0].offsetWidth;
-//     const index = Math.round(sliderTrack.scrollLeft / slideWidth);
-//     setActiveDot(index);
-//   });
+  sliderTrack.addEventListener('scroll', () => {
+    const slideWidth = slides[0].offsetWidth;
+    const index = Math.round(sliderTrack.scrollLeft / slideWidth);
+    setActiveDot(index);
+  });
 
-//   dots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//       const slideWidth = slides[0].offsetWidth;
-//       sliderTrack.scrollLeft = index * slideWidth;
-//       setActiveDot(index);
-//     });
-//   });
-// }
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      const slideWidth = slides[0].offsetWidth;
+      sliderTrack.scrollLeft = index * slideWidth;
+      setActiveDot(index);
+    });
+  });
+}
