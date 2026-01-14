@@ -482,7 +482,7 @@ main {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 16px; /* gelijk met menu padding */
+  padding: 16px 16px; 
   font-weight: 700;
   color: var(--wt-text-dark);
   text-decoration: none;

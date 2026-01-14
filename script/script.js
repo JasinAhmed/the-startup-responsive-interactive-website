@@ -37,28 +37,25 @@ branchesButton.addEventListener('click', () => {
   functiesItem.classList.remove('open');
 });
 
-// 6. SLIDER DOTS (KLIK + SCROLL)
-if (sliderTrack && slides.length && dots.length) {
+// // 6. SLIDER DOTS (KLIK + SCROLL)
+// if (sliderTrack && slides.length && dots.length) {
 
-  // actief bolletje aanpassen
-  function setActiveDot(index) {
-    dots.forEach(d => d.classList.remove('is-active'));
-    dots[index].classList.add('is-active');
-  }
+//   function setActiveDot(index) {
+//     dots.forEach(d => d.classList.remove('is-active'));
+//     if (dots[index]) dots[index].classList.add('is-active');
+//   }
 
-  // scroll -> dot mee laten gaan
-  sliderTrack.addEventListener('scroll', () => {
-    const slideWidth = slides[0].offsetWidth;
-    const index = Math.round(sliderTrack.scrollLeft / slideWidth);
-    setActiveDot(index);
-  });
+//   sliderTrack.addEventListener('scroll', () => {
+//     const slideWidth = slides[0].offsetWidth;
+//     const index = Math.round(sliderTrack.scrollLeft / slideWidth);
+//     setActiveDot(index);
+//   });
 
-  // klik -> naar slide + dot actief
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      const slideWidth = slides[0].offsetWidth;
-      sliderTrack.scrollLeft = index * slideWidth;
-      setActiveDot(index);
-    });
-  });
-}
+//   dots.forEach((dot, index) => {
+//     dot.addEventListener('click', () => {
+//       const slideWidth = slides[0].offsetWidth;
+//       sliderTrack.scrollLeft = index * slideWidth;
+//       setActiveDot(index);
+//     });
+//   });
+// }
