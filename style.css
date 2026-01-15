@@ -258,6 +258,9 @@ main {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+
+  /* extra: voelt strakker */
+  border-radius: 24px;
 }
 
 .slider-track::-webkit-scrollbar {
@@ -345,13 +348,21 @@ main {
   /* start uit beeld */
   transform: translateX(100%);
 
+  /*fix: als menu dicht is, niet klikbaar + niet zichtbaar */
+  opacity: 0;
+  pointer-events: none;
+
   /* ease-out */
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 /* open -> in beeld */
 .mobile-menu.is-open {
   transform: translateX(0);
+
+  /*fix: nu wel zichtbaar + klikbaar */
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .mobile-menu-header {
@@ -390,7 +401,7 @@ main {
   border-bottom: 1px solid var(--wt-border);
 }
 
-/* linkjes netjes recht */
+/*alleen de normale links (Klanten/Koppelingen/etc) */
 .mobile-menu-list > li > a {
   display: block;
   padding: 18px 16px;
@@ -399,6 +410,7 @@ main {
   text-decoration: none;
 }
 
+/* Mobile menu bottom */
 .mobile-menu-bottom {
   margin-top: 18px;
   display: grid;
@@ -443,6 +455,7 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+
 /* FUNCTIES + BRANCHES Accordion */
 
 /* knop standaard */
@@ -485,8 +498,10 @@ main {
 
 /* submenu links uitlijnen */
 .submenu a{
-  display: block;
-  padding: 16px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px; 
   font-weight: 700;
   color: var(--wt-text-dark);
   text-decoration: none;
