@@ -15,10 +15,26 @@
 
   <!-- Header -->
   <header class="site-header">
-    <a href="assets/logowerk.svg" class="site-logo">werktijden.nl</a>
+    <a href="/" class="site-logo">werktijden.nl</a>
 
-    <nav class="main-nav">
-      <button class="menu-open" type="button">☰</button>
+    <nav class="main-nav" aria-label="Hoofdmenu">
+      <!-- Mobiel: hamburger -->
+      <button class="menu-open" type="button" aria-controls="mobile-menu" aria-expanded="false">☰</button>
+
+      <!-- Desktop: menu-items -->
+      <ul class="desktop-nav">
+        <li><a class="nav-link nav-link--dropdown" href="#">Functies</a></li>
+        <li><a class="nav-link nav-link--dropdown" href="#">Branches</a></li>
+        <li><a class="nav-link" href="#">Klanten</a></li>
+        <li><a class="nav-link" href="#">Koppelingen</a></li>
+        <li><a class="nav-link" href="#">Tarieven</a></li>
+      </ul>
+
+      <!-- Desktop: knoppen rechts -->
+      <div class="header-actions">
+        <a class="header-btn header-btn-outline" href="#">Inloggen</a>
+        <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
+      </div>
     </nav>
   </header>
 

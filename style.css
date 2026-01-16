@@ -22,6 +22,10 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+
+  /* NEW: container queries voor header */
+  container-type: inline-size;
+  container-name: header;
 }
 
 .site-logo {
@@ -47,11 +51,11 @@ main {
   font-size: 18px;
 }
 
+/* FIX: display:none weggehaald, want dat verstopte je desktop-nav UL altijd */
 .main-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: none;
 }
 
 .main-nav a {
@@ -487,7 +491,7 @@ main {
 .submenu{
   list-style: none;
   margin: 8px 0 0;
-  padding: 0   ;
+  padding: 0;
   display: none;
 }
 
@@ -534,7 +538,6 @@ main {
 /* Mobile first: slider op mobiel */
 /* Desktop: 3 vacatures naast elkaar */
 
-
 /* Maak de vacature-slider een container + geef hem een naam */
 .vacature-slider {
   container-type: inline-size;
@@ -568,5 +571,112 @@ main {
   /* dots alleen mobiel */
   .slider-dots {
     display: none;
+  }
+}
+
+/* ========================================================= */
+/* EXTRA FIX: alles "recht" (gelijke hoogte + knop onderaan)  */
+/* ========================================================= */
+
+/* elke vacaturekaart wordt een kolom */
+.vacature {
+  display: flex;
+  flex-direction: column;
+}
+
+/* knop altijd onderaan */
+.vacature a {
+  margin-top: auto;
+}
+
+/* ========================================================= */
+/* HEADER DESKTOP FIX (container query i.p.v. media)          */
+/* ========================================================= */
+
+/* Desktop nav + acties standaard uit op mobiel (mobile first) */
+.desktop-nav {
+  display: none;
+}
+
+.header-actions {
+  display: none;
+}
+
+/* Desktop header wanneer header breed genoeg is */
+@container header (min-width: 992px) {
+
+  .menu-open {
+    display: none;
+  }
+
+  /* FIX: main-nav echt centreren */
+  .main-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* <-- dit was het probleem */
+    gap: 24px;
+  }
+
+  /* FIX: geen auto margins hier */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+  }
+
+  .desktop-nav li {
+    list-style: none;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 6px;
+    font-weight: 700;
+    color: var(--wt-text-dark);
+    text-decoration: none;
+  }
+
+  .nav-link--dropdown::after {
+    content: "⌄";
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  /* FIX: knoppen gewoon rechts laten staan */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 0;
+  }
+
+  .header-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .header-btn-outline {
+    border: 1px solid var(--wt-border);
+    background: var(--wt-container);
+    color: var(--wt-text-dark);
+  }
+
+  .header-btn-primary {
+    background: var(--wt-primary);
+    color: var(--wt-text-light);
+    border: none;
+  }
+
+  .site-header {
+    padding: 18px 24px;
   }
 }
