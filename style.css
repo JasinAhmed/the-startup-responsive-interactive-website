@@ -9,7 +9,7 @@ body {
 
 main {
   padding: 16px;
-  max-width: 1024px; /* FIX: was 900px, nu kan desktop layout ook echt breed genoeg worden */
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@ main {
   justify-content: space-between;
   gap: 12px;
 
-  /* NEW: container queries voor header */
+  /* container queries voor header */
   container-type: inline-size;
   container-name: header;
 }
@@ -51,7 +51,7 @@ main {
   font-size: 18px;
 }
 
-/* FIX: display:none weggehaald, want dat verstopte je desktop-nav UL altijd */
+/* UL niet verstoppen */
 .main-nav ul {
   list-style: none;
   margin: 0;
@@ -184,55 +184,6 @@ main {
   line-height: 1.4;
 }
 
-/* Footer */
-.footer {
-  margin-top: 20px;
-  background: rgb(16, 24, 40);
-  color: var(--wt-text-light);
-  padding: 20px 16px;
-}
-
-.footer-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.footer a {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.footer a:hover {
-  color: var(--wt-text-light);
-}
-
-.footer-logo {
-  margin: 0 0 8px;
-  color: var(--wt-text-light);
-}
-
-.footer-brand {
-  margin-bottom: 18px;
-}
-
-.footer-column {
-  margin-bottom: 18px;
-}
-
-.footer-column h3 {
-  margin: 0 0 10px;
-  font-size: 14px;
-}
-
-.footer-column ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-column li {
-  margin-bottom: 8px;
-}
-
 .visually-hidden{
   position: absolute;
   width: 1px;
@@ -252,6 +203,9 @@ main {
   display: grid;
   justify-items: center;
   gap: 12px;
+
+  container-type: inline-size;
+  container-name: vacatures;
 }
 
 .slider-track {
@@ -262,8 +216,6 @@ main {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-
-  /* extra: voelt strakker */
   border-radius: 24px;
 }
 
@@ -282,7 +234,7 @@ main {
   margin-bottom: 0;
 }
 
-/* pijlen mobiel: bovenop de kaart */
+/* pijlen mobiel */
 .slider-arrow {
   width: 36px;
   height: 36px;
@@ -338,9 +290,7 @@ main {
   background: rgb(4, 120, 87);
 }
 
-
 /* Mobile menu */
-
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -348,23 +298,14 @@ main {
   z-index: 9999;
   padding: 18px 16px;
   overflow: auto;
-
-  /* start uit beeld */
   transform: translateX(100%);
-
-  /*fix: als menu dicht is, niet klikbaar + niet zichtbaar */
   opacity: 0;
   pointer-events: none;
-
-  /* ease-out */
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-/* open -> in beeld */
 .mobile-menu.is-open {
   transform: translateX(0);
-
-  /*fix: nu wel zichtbaar + klikbaar */
   opacity: 1;
   pointer-events: auto;
 }
@@ -400,12 +341,10 @@ main {
   margin: 0;
 }
 
-/* alleen eerste laag LI's krijgen de border */
 .mobile-menu-list > li {
   border-bottom: 1px solid var(--wt-border);
 }
 
-/*alleen de normale links (Klanten/Koppelingen/etc) */
 .mobile-menu-list > li > a {
   display: block;
   padding: 18px 16px;
@@ -414,7 +353,6 @@ main {
   text-decoration: none;
 }
 
-/* Mobile menu bottom */
 .mobile-menu-bottom {
   margin-top: 18px;
   display: grid;
@@ -442,7 +380,6 @@ main {
   border: none;
 }
 
-/* Chat knop rechts onder */
 .chat-fab {
   position: fixed;
   right: 16px;
@@ -459,10 +396,7 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-
-/* FUNCTIES + BRANCHES Accordion */
-
-/* knop standaard */
+/* Accordion */
 .accordion-btn{
   width: 100%;
   padding: 18px 16px;
@@ -470,24 +404,20 @@ main {
   border: none;
   border-radius: 14px;
   cursor: pointer;
-
   font: inherit;
   color: var(--wt-text-dark);
   font-weight: 700;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* pijltje standaard */
 .arrow{
   font-size: 18px;
   transition: transform 0.2s ease;
   color: var(--wt-text-dark);
 }
 
-/* submenu standaard dicht */
 .submenu{
   list-style: none;
   margin: 8px 0 0;
@@ -495,12 +425,10 @@ main {
   display: none;
 }
 
-/* submenu items */
 .submenu li{
   border-bottom: 1px solid var(--wt-border);
 }
 
-/* submenu links uitlijnen */
 .submenu a{
   display: flex;
   align-items: center;
@@ -511,89 +439,54 @@ main {
   text-decoration: none;
 }
 
-/* OPEN STATE (groen) */
 .accordion.open .accordion-btn{
   background: rgba(5, 150, 105, 0.12);
   color: var(--wt-primary);
   border: 1px solid var(--wt-border);
 }
 
-/* pijltje groen + draaien */
 .accordion.open .arrow{
   color: var(--wt-primary);
   transform: rotate(180deg);
 }
 
-/* submenu zichtbaar */
 .accordion.open .submenu{
   display: block;
 }
 
-/*fix: dot cursor */
-.dot {
-  cursor: pointer;
-}
-
-/* CONTAINER QUERY – DESKTOP   */
-/* Mobile first: slider op mobiel */
-/* Desktop: 3 vacatures naast elkaar */
-
-/* Maak de vacature-slider een container + geef hem een naam */
-.vacature-slider {
-  container-type: inline-size;
-  container-name: vacatures;
-}
-
-/* Let op: main heeft padding 16px links + rechts (32px totaal)
-   Daarom is 1024px viewport ≈ 992px container.
-   Dus vanaf 992px zetten we 3 kaarten naast elkaar. */
+/* Container query vacatures (desktop) */
 @container vacatures (min-width: 992px) {
-
-  /* track wordt grid met 3 kolommen */
   .slider-track {
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-
-    /* slider gedrag uit */
     overflow: visible;
     scroll-snap-type: none;
   }
 
-  /* cards hoeven niet meer te sliden */
   .slider-track .vacature {
     flex: unset;
     scroll-snap-align: unset;
     margin-bottom: 0;
   }
 
-  /* dots alleen mobiel */
   .slider-dots {
     display: none;
   }
 }
 
-/* ========================================================= */
-/* EXTRA FIX: alles "recht" (gelijke hoogte + knop onderaan)  */
-/* ========================================================= */
-
-/* elke vacaturekaart wordt een kolom */
+/* Cards gelijke hoogte + knop onderaan */
 .vacature {
   display: flex;
   flex-direction: column;
 }
 
-/* knop altijd onderaan */
 .vacature a {
   margin-top: auto;
 }
 
-/* ========================================================= */
-/* HEADER DESKTOP FIX (container query i.p.v. media)          */
-/* ========================================================= */
-
-/* Desktop nav + acties standaard uit op mobiel (mobile first) */
+/* Header desktop via container query */
 .desktop-nav {
   display: none;
 }
@@ -602,28 +495,24 @@ main {
   display: none;
 }
 
-/* Desktop header wanneer header breed genoeg is */
 @container header (min-width: 992px) {
-
   .menu-open {
     display: none;
   }
 
-  /* FIX: main-nav echt centreren */
   .main-nav {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* <-- dit was het probleem */
+    justify-content: space-between;
     gap: 24px;
   }
 
-  /* FIX: geen auto margins hier */
   .desktop-nav {
     display: flex;
     align-items: center;
     gap: 28px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .desktop-nav li {
@@ -647,12 +536,11 @@ main {
     opacity: 0.9;
   }
 
-  /* FIX: knoppen gewoon rechts laten staan */
   .header-actions {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-left: 0;
+    margin: 0;
   }
 
   .header-btn {
@@ -678,5 +566,83 @@ main {
 
   .site-header {
     padding: 18px 24px;
+  }
+}
+
+
+
+/* footer wordt een container zodat we container query kunnen gebruiken */
+.footer {
+  margin-top: 20px;
+  background: linear-gradient(180deg, rgb(16, 24, 40), rgb(2, 6, 23));
+  color: var(--wt-text-light);
+  padding: 60px 16px;
+
+  container-type: inline-size;
+  container-name: footer;
+}
+
+/* mobiel: alles onder elkaar */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  margin-bottom: 28px;
+}
+
+.footer-logo {
+  margin: 0 0 12px;
+  color: var(--wt-primary);
+  font-weight: 900;
+  font-size: 26px;
+}
+
+.footer-column {
+  margin-bottom: 28px;
+}
+
+.footer-column h3 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  color: var(--wt-text-light);
+}
+
+/* desktop: grid kolommen naast elkaar */
+@container footer (min-width: 992px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.3fr repeat(4, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .footer-brand {
+    margin-bottom: 0;
+  }
+
+  .footer-column {
+    margin-bottom: 0;
   }
 }
