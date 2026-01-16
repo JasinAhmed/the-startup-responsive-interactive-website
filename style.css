@@ -9,7 +9,7 @@ body {
 
 main {
   padding: 16px;
-  max-width: 900px;
+  max-width: 1024px; /* FIX: was 900px, nu kan desktop layout ook echt breed genoeg worden */
   margin: 0 auto;
 }
 
@@ -487,7 +487,7 @@ main {
 .submenu{
   list-style: none;
   margin: 8px 0 0;
-  padding: 0;
+  padding: 0   ;
   display: none;
 }
 
@@ -528,4 +528,45 @@ main {
 /*fix: dot cursor */
 .dot {
   cursor: pointer;
+}
+
+/* CONTAINER QUERY – DESKTOP   */
+/* Mobile first: slider op mobiel */
+/* Desktop: 3 vacatures naast elkaar */
+
+
+/* Maak de vacature-slider een container + geef hem een naam */
+.vacature-slider {
+  container-type: inline-size;
+  container-name: vacatures;
+}
+
+/* Let op: main heeft padding 16px links + rechts (32px totaal)
+   Daarom is 1024px viewport ≈ 992px container.
+   Dus vanaf 992px zetten we 3 kaarten naast elkaar. */
+@container vacatures (min-width: 992px) {
+
+  /* track wordt grid met 3 kolommen */
+  .slider-track {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    /* slider gedrag uit */
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  /* cards hoeven niet meer te sliden */
+  .slider-track .vacature {
+    flex: unset;
+    scroll-snap-align: unset;
+    margin-bottom: 0;
+  }
+
+  /* dots alleen mobiel */
+  .slider-dots {
+    display: none;
+  }
 }
