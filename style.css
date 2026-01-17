@@ -1,6 +1,5 @@
-* {
-  box-sizing: border-box;
-}
+/* ====== BASE ====== */
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -13,19 +12,32 @@ main {
   margin: 0 auto;
 }
 
-/* Header */
+/* ====== HEADER (CONTAINER QUERIES, WERKTIJDEN LOOK) ====== */
 .site-header {
   background: var(--wt-container);
   border-bottom: 1px solid var(--wt-border);
-  padding: 14px 16px;
+
+  height: 72px;               /* vaste hoogte */
+  display: flex;
+  align-items: center;
+
+  /* container query aan */
+  container-type: inline-size;
+  container-name: header;
+}
+
+/* inner container = zorgt dat het net als werktijden.nl gecentreerd staat */
+.header-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-
-  /* container queries voor header */
-  container-type: inline-size;
-  container-name: header;
+  gap: 16px;
 }
 
 .site-logo {
@@ -33,15 +45,23 @@ main {
   font-size: 22px;
   color: var(--wt-primary);
   text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  line-height: 1;
 }
 
 .main-nav {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 16px;
 }
 
-.main-nav button {
+/* hamburger */
+.menu-open {
   width: 44px;
   height: 44px;
   border: 1px solid var(--wt-border);
@@ -51,20 +71,80 @@ main {
   font-size: 18px;
 }
 
-/* UL niet verstoppen */
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* desktop stuff standaard uit */
+.desktop-nav { display: none; }
+.header-actions { display: none; }
+
+/* Desktop via container query (geen media queries) */
+@container header (min-width: 992px) {
+  .menu-open { display: none; }
+
+  .main-nav {
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    font-weight: 600;
+    color: var(--wt-text-dark);
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .nav-link--dropdown::after {
+    content: "⌄";
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .header-btn-outline {
+    border: 1px solid var(--wt-border);
+    background: var(--wt-container);
+    color: var(--wt-text-dark);
+  }
+
+  .header-btn-primary {
+    background: var(--wt-primary);
+    color: var(--wt-text-light);
+    border: none;
+  }
 }
 
-.main-nav a {
-  color: var(--wt-text-dark);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* Page header */
+/* ====== PAGE HEADER ====== */
 .page-header {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
@@ -78,27 +158,26 @@ main {
   font-size: 28px;
 }
 
-.page-header p {
-  margin: 0;
-}
+.page-header p { margin: 0; }
 
-/* Vacature overzicht */
-.vacature-overzicht {
-  margin-top: 16px;
-}
+/* ====== VACATURE OVERZICHT ====== */
+.vacature-overzicht { margin-top: 16px; }
 
 .vacature-overzicht > h2 {
   margin: 0 0 12px;
   font-size: 18px;
 }
 
-/* Vacature kaart (bubbel look) */
+/* ====== VACATURE CARD ====== */
 .vacature {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
   border-radius: 24px;
   padding: 18px;
   margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* Badge */
@@ -114,21 +193,14 @@ main {
 }
 
 /* Titel */
-.vacature h3 {
-  margin: 8px 0 6px;
-  font-size: 24px;
-  line-height: 1.2;
-}
-
+.vacature h3,
 .vacature h2 {
   margin: 8px 0 6px;
   font-size: 24px;
   line-height: 1.2;
 }
 
-.vacature p {
-  margin: 0 0 12px;
-}
+.vacature p { margin: 0 0 12px; }
 
 /* Bubble info list */
 .vacature-info {
@@ -171,6 +243,8 @@ main {
   color: var(--wt-text-light);
   font-weight: 900;
   text-decoration: none;
+
+  margin-top: auto;
 }
 
 .vacature a:hover {
@@ -184,6 +258,7 @@ main {
   line-height: 1.4;
 }
 
+/* ====== VISUALLY HIDDEN ====== */
 .visually-hidden{
   position: absolute;
   width: 1px;
@@ -196,7 +271,7 @@ main {
   border: 0;
 }
 
-/* Vacature slider */
+/* ====== VACATURE SLIDER ====== */
 .vacature-slider {
   margin-top: 16px;
   position: relative;
@@ -219,14 +294,8 @@ main {
   border-radius: 24px;
 }
 
-.slider-track::-webkit-scrollbar {
-  display: none;
-}
-
-.slider-track {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-track { -ms-overflow-style: none; scrollbar-width: none; }
 
 .slider-track .vacature {
   flex: 0 0 100%;
@@ -249,13 +318,8 @@ main {
   top: 8px;
 }
 
-.slider-arrow-left {
-  left: 8px;
-}
-
-.slider-arrow-right {
-  right: 8px;
-}
+.slider-arrow-left { left: 8px; }
+.slider-arrow-right { right: 8px; }
 
 /* Dots */
 .slider-dots {
@@ -286,11 +350,29 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.dot.is-active::after {
-  background: rgb(4, 120, 87);
+.dot.is-active::after { background: rgb(4, 120, 87); }
+
+/* Desktop vacatures via container query */
+@container vacatures (min-width: 992px) {
+  .slider-track {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .slider-track .vacature {
+    flex: unset;
+    scroll-snap-align: unset;
+    margin-bottom: 0;
+  }
+
+  .slider-dots { display: none; }
 }
 
-/* Mobile menu */
+/* ====== MOBILE MENU ====== */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -380,6 +462,7 @@ main {
   border: none;
 }
 
+/* ====== CHAT FAB ====== */
 .chat-fab {
   position: fixed;
   right: 16px;
@@ -396,7 +479,7 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Accordion */
+/* ====== ACCORDION ====== */
 .accordion-btn{
   width: 100%;
   padding: 18px 16px;
@@ -433,7 +516,7 @@ main {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 16px; 
+  padding: 16px 16px;
   font-weight: 700;
   color: var(--wt-text-dark);
   text-decoration: none;
@@ -454,124 +537,7 @@ main {
   display: block;
 }
 
-/* Container query vacatures (desktop) */
-@container vacatures (min-width: 992px) {
-  .slider-track {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    overflow: visible;
-    scroll-snap-type: none;
-  }
-
-  .slider-track .vacature {
-    flex: unset;
-    scroll-snap-align: unset;
-    margin-bottom: 0;
-  }
-
-  .slider-dots {
-    display: none;
-  }
-}
-
-/* Cards gelijke hoogte + knop onderaan */
-.vacature {
-  display: flex;
-  flex-direction: column;
-}
-
-.vacature a {
-  margin-top: auto;
-}
-
-/* Header desktop via container query */
-.desktop-nav {
-  display: none;
-}
-
-.header-actions {
-  display: none;
-}
-
-@container header (min-width: 992px) {
-  .menu-open {
-    display: none;
-  }
-
-  .main-nav {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-  }
-
-  .desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    margin: 0 auto;
-  }
-
-  .desktop-nav li {
-    list-style: none;
-  }
-
-  .nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 6px;
-    font-weight: 700;
-    color: var(--wt-text-dark);
-    text-decoration: none;
-  }
-
-  .nav-link--dropdown::after {
-    content: "⌄";
-    font-size: 14px;
-    line-height: 1;
-    opacity: 0.9;
-  }
-
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0;
-  }
-
-  .header-btn {
-    display: inline-block;
-    padding: 12px 18px;
-    border-radius: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .header-btn-outline {
-    border: 1px solid var(--wt-border);
-    background: var(--wt-container);
-    color: var(--wt-text-dark);
-  }
-
-  .header-btn-primary {
-    background: var(--wt-primary);
-    color: var(--wt-text-light);
-    border: none;
-  }
-
-  .site-header {
-    padding: 18px 24px;
-  }
-}
-
-
-
-/* footer wordt een container zodat we container query kunnen gebruiken */
+/* ====== FOOTER ====== */
 .footer {
   margin-top: 20px;
   background: linear-gradient(180deg, rgb(16, 24, 40), rgb(2, 6, 23));
@@ -582,15 +548,12 @@ main {
   container-name: footer;
 }
 
-/* mobiel: alles onder elkaar */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-brand {
-  margin-bottom: 28px;
-}
+.footer-brand { margin-bottom: 28px; }
 
 .footer-logo {
   margin: 0 0 12px;
@@ -599,9 +562,7 @@ main {
   font-size: 26px;
 }
 
-.footer-column {
-  margin-bottom: 28px;
-}
+.footer-column { margin-bottom: 28px; }
 
 .footer-column h3 {
   margin: 0 0 14px;
@@ -615,9 +576,7 @@ main {
   padding: 0;
 }
 
-.footer-column li {
-  margin-bottom: 10px;
-}
+.footer-column li { margin-bottom: 10px; }
 
 .footer a {
   color: rgba(255, 255, 255, 0.85);
@@ -625,11 +584,9 @@ main {
   font-weight: 600;
 }
 
-.footer a:hover {
-  color: var(--wt-text-light);
-}
+.footer a:hover { color: var(--wt-text-light); }
 
-/* desktop: grid kolommen naast elkaar */
+/* desktop footer via container query */
 @container footer (min-width: 992px) {
   .footer-container {
     display: grid;
@@ -638,11 +595,6 @@ main {
     align-items: start;
   }
 
-  .footer-brand {
-    margin-bottom: 0;
-  }
-
-  .footer-column {
-    margin-bottom: 0;
-  }
+  .footer-brand { margin-bottom: 0; }
+  .footer-column { margin-bottom: 0; }
 }
