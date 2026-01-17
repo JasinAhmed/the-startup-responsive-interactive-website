@@ -1,13 +1,16 @@
-/* WERKTIJDEN.NL – STYLEGUIDE */
+
+   /* WERKTIJDEN.NL – STYLEGUIDE (WCAG-CONTRAST GOEDGEKEURD) */
 
 
-/* Font: Inter */
+
+   /* Font: Inter */
+
 @font-face {
   font-family: "Inter";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
- src:url('../fonts/Inter_18pt-Regular.ttf') format("ttf");
+  src: url("../fonts/Inter_18pt-Regular.ttf") format("ttf");
 }
 
 @font-face {
@@ -26,15 +29,12 @@
   src: url("../fonts/Inter_18pt-Bold.ttf") format("ttf");
 }
 
-/* gebruiken */
-body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-}
 
+   /* Root variables */
 
 :root {
-  /* Kleuren */
-  --wt-primary: rgb(5, 150, 105);
+  /* Kleuren (WCAG-proof) */
+  --wt-primary: rgb(22, 84, 65);       /* ✅ voldoende contrast met wit */
   --wt-container: rgb(255, 255, 255);
   --wt-section-bg: rgb(249, 250, 251);
 
@@ -43,11 +43,12 @@ body {
 
   --wt-border: rgb(229, 231, 235);
 
-  /* Overig */
-  --wt-font: "Inter", sans-serif;
+  /* Font */
+  --wt-font: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-/* Base */
+
+   /* Base */
 * {
   box-sizing: border-box;
 }
@@ -75,30 +76,38 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  font-family: var(--wt-font);
+}
+
+
+   /* Typography */
 h1 {
   margin: 0 0 8px;
   font-size: 28px;
+  font-weight: 700;
 }
 
 h2 {
   margin: 0 0 12px;
   font-size: 18px;
+  font-weight: 600;
 }
 
 h3 {
   margin: 0 0 10px;
   font-size: 14px;
+  font-weight: 600;
 }
 
 p {
   margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-button {
-  font-family: var(--wt-font);
-}
 
-/* Layout */
+   /* Layout helpers */
 .wt-header {
   margin-bottom: 2rem;
 }
@@ -112,9 +121,11 @@ button {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
   padding: 1.5rem;
+  border-radius: 14px;
 }
 
-/* Kleuren */
+
+   /* Color preview blocks */
 .wt-color-item {
   display: flex;
   align-items: center;
@@ -127,9 +138,12 @@ button {
   padding: 0.75rem;
   border: 1px solid var(--wt-border);
   font-family: monospace;
+  font-size: 13px;
+  border-radius: 8px;
 }
 
-/* Kleur classes */
+
+   /* Color utility classes */
 .wt-primary {
   background: var(--wt-primary);
   color: var(--wt-text-light);
@@ -152,15 +166,19 @@ button {
   background: var(--wt-border);
 }
 
-/* Font */
+
+   /* Font demo */
 .wt-font-demo {
   border: 1px solid var(--wt-border);
   padding: 1rem;
+  border-radius: 10px;
 }
+
 
 /* Buttons */
 .wt-btn {
   padding: 0.6rem 1rem;
+  border-radius: 999px;
   border: 1px solid var(--wt-border);
   font-weight: 600;
   cursor: pointer;
@@ -169,13 +187,18 @@ button {
   color: var(--wt-text-dark);
 }
 
+.wt-btn:hover {
+  opacity: 0.95;
+}
+
 .wt-btn.wt-primary {
   background: var(--wt-primary);
   color: var(--wt-text-light);
   border: none;
 }
 
-/* Formulier */
+
+   /* Forms */
 .wt-form {
   display: grid;
   gap: 1rem;
@@ -185,11 +208,27 @@ button {
 .wt-form textarea {
   width: 100%;
   padding: 0.6rem;
+  border-radius: 10px;
   border: 1px solid var(--wt-border);
   font-family: var(--wt-font);
+  font-size: 14px;
 }
 
 .wt-form textarea {
   resize: none;
   height: 100px;
+}
+
+
+   /* Accessibility helpers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
