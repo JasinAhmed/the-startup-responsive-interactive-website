@@ -77,3 +77,25 @@ if (sliderTrack && slides.length && dots.length) {
     });
   });
 }
+
+/* ================================
+   SOLLICITATIE POPUP (HEEL SIMPEL)
+   Eerstejaars niveau
+================================ */
+
+// ELEMENTEN SELECTEREN
+const openSollicitatieBtn = document.getElementById('openSollicitatie');
+const sollicitatieModal = document.getElementById('sollicitatieModal');
+const closeSollicitatieBtn = document.getElementById('closeSollicitatie');
+
+// POPUP OPENEN
+openSollicitatieBtn.addEventListener('click', () => {
+  // laat de popup zien
+  sollicitatieModal.showModal();
+});
+
+// POPUP SLUITEN
+closeSollicitatieBtn.addEventListener('click', () => {
+  // sluit de popup
+  sollicitatieModal.close();
+});

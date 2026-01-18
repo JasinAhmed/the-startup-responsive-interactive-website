@@ -17,53 +17,48 @@
   <a class="skip-link" href="#main">Ga naar inhoud</a>
 
   <!-- ================= HEADER ================= -->
-<header class="site-header">
-  <section class="header-inner">
-    <h2 class="visually-hidden">Hoofdnavigatie</h2>
+  <header class="site-header">
+    <section class="header-inner">
+      <h2 class="visually-hidden">Hoofdnavigatie</h2>
 
-    <a href="index.html" class="site-logo">
-      <img src="assets/logowerk.svg" alt="Werktijden.nl">
-    </a>
+      <a href="index.html" class="site-logo">
+        <img src="assets/logowerk.svg" alt="Werktijden.nl">
+      </a>
 
-    <nav class="main-nav" aria-label="Hoofdnavigatie">
-      <!-- Mobiel: hamburger -->
-      <button class="menu-open" type="button">
-        ☰ <span class="visually-hidden">Menu openen</span>
-      </button>
+      <nav class="main-nav" aria-label="Hoofdnavigatie">
+        <button class="menu-open" type="button">
+          ☰ <span class="visually-hidden">Menu openen</span>
+        </button>
 
-      <!-- Desktop: menu-items -->
-      <ul class="desktop-nav">
-        <li><a class="nav-link nav-link--dropdown" href="#">Functies</a></li>
-        <li><a class="nav-link nav-link--dropdown" href="#">Branches</a></li>
-        <li><a class="nav-link" href="#">Klanten</a></li>
-        <li><a class="nav-link" href="#">Koppelingen</a></li>
-        <li><a class="nav-link" href="#">Tarieven</a></li>
-      </ul>
+        <ul class="desktop-nav">
+          <li><a class="nav-link nav-link--dropdown" href="#">Functies</a></li>
+          <li><a class="nav-link nav-link--dropdown" href="#">Branches</a></li>
+          <li><a class="nav-link" href="#">Klanten</a></li>
+          <li><a class="nav-link" href="#">Koppelingen</a></li>
+          <li><a class="nav-link" href="#">Tarieven</a></li>
+        </ul>
 
-      <section class="header-actions" aria-label="Account acties">
-        <h3 class="visually-hidden">Account acties</h3>
-        <a class="header-btn header-btn-outline" href="#">Inloggen</a>
-        <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
-      </section>
-    </nav>
-  </section>
-</header>
-
+        <section class="header-actions" aria-label="Account acties">
+          <h3 class="visually-hidden">Account acties</h3>
+          <a class="header-btn header-btn-outline" href="#">Inloggen</a>
+          <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
+        </section>
+      </nav>
+    </section>
+  </header>
 
   <!-- ================= MOBILE MENU ================= -->
   <section class="mobile-menu" id="mobile-menu" hidden>
     <h2 class="visually-hidden">Mobiel menu</h2>
 
     <header class="mobile-menu-header">
-      <a href="/" class="mobile-menu-logo">werktijden.nl</a>
+      <a href="index.html" class="mobile-menu-logo">werktijden.nl</a>
       <button class="menu-close" type="button">
         ✕ <span class="visually-hidden">Menu sluiten</span>
       </button>
     </header>
 
     <ul class="mobile-menu-list">
-
-      <!-- Functies -->
       <li class="accordion functies">
         <button class="accordion-btn functies-btn" type="button">
           Functies <span class="arrow">⌄</span>
@@ -82,7 +77,6 @@
         </ul>
       </li>
 
-      <!-- Branches -->
       <li class="accordion branches">
         <button class="accordion-btn branches-btn" type="button">
           Branches <span class="arrow">⌄</span>
@@ -95,7 +89,6 @@
         </ul>
       </li>
 
-      <!-- Normale links -->
       <li><a href="#">Klanten</a></li>
       <li><a href="#">Tarieven</a></li>
       <li><a href="#">Contact</a></li>
@@ -104,7 +97,6 @@
 
     <section class="mobile-menu-bottom" aria-label="Account acties mobiel">
       <h2 class="visually-hidden">Account acties</h2>
-
       <a class="mobile-btn mobile-btn-outline" href="#">Inloggen</a>
       <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
     </section>
@@ -121,9 +113,53 @@
       <h1>Marketing Coördinator</h1>
       <p>werktijden.nl · Marketing</p>
 
-      <p>
-        <a class="mobile-btn mobile-btn-primary" href="#">Solliciteer nu</a>
-      </p>
+      <!-- ====== FIX: knop + dialog popup ====== -->
+      <button class="wt-btn wt-primary" type="button" id="openSollicitatie">
+        Solliciteer nu
+      </button>
+
+      <dialog class="wt-modal" id="sollicitatieModal" aria-labelledby="sollicitatieTitel">
+        <form class="wt-form wt-modal__body" action="/solliciteer" method="post" enctype="multipart/form-data">
+
+          <header class="wt-modal__header">
+            <h2 id="sollicitatieTitel" class="wt-modal__title">Solliciteren</h2>
+            <button class="wt-modal__close" type="button" id="closeSollicitatieX" aria-label="Sluiten">✕</button>
+          </header>
+
+          <fieldset class="wt-modal__fieldset">
+            <legend class="visually-hidden">Sollicitatieformulier</legend>
+
+            <label>
+              Naam
+              <input type="text" name="naam" class="wt-input" required autocomplete="name">
+            </label>
+
+            <label>
+              E-mail
+              <input type="email" name="email" class="wt-input" required autocomplete="email">
+            </label>
+
+            <label>
+              Telefoon (optioneel)
+              <input type="tel" name="telefoon" class="wt-input" autocomplete="tel">
+            </label>
+
+            <label>
+              Motivatie
+              <textarea name="motivatie" class="wt-textarea" required></textarea>
+            </label>
+
+            <label>
+              CV uploaden (PDF/DOC/DOCX)
+              <input type="file" name="cv" class="wt-input" accept=".pdf,.doc,.docx" required>
+            </label>
+
+            <button type="submit" class="wt-btn wt-primary">Versturen</button>
+            <button type="button" class="wt-btn wt-secondary" id="closeSollicitatie">Annuleren</button>
+          </fieldset>
+        </form>
+      </dialog>
+      <!-- ====== EINDE FIX ====== -->
 
       <ul class="vacature-info">
         <li>Utrecht / Hybride</li>
@@ -134,16 +170,27 @@
       </ul>
     </header>
 
-    <section class="vacature">
-      <h2>Over de functie</h2>
+    <!-- ====== TABS (NIEUW) ====== -->
+    <nav class="detail-tabs">
+      <a class="detail-tab" href="#tab-werktijden">Werktijden.nl</a>
+      <a class="detail-tab" href="#tab-functie">Functie omschrijving</a>
+      <a class="detail-tab" href="#tab-bieden">Wat bieden wij jou?</a>
+    </nav>
+
+    <!-- ====== TAB CONTENT (NIEUW) ====== -->
+    <section class="detail-tab-content" id="tab-werktijden">
+      <h2>Werktijden.nl</h2>
       <p>
-        Als Marketing Coördinator bij Werktijden.nl help je mee met het plannen en
-        uitvoeren van marketingcampagnes. Je werkt samen met het team en houdt overzicht.
+        Werktijden.nl helpt bedrijven met roosterplanning en urenregistratie. We maken het makkelijker om te plannen en overzicht te houden.
       </p>
     </section>
 
-    <section class="vacature">
-      <h2>Wat ga je doen</h2>
+    <section class="detail-tab-content" id="tab-functie">
+      <h2>Functie omschrijving</h2>
+      <p>
+        Als Marketing Coördinator help je mee met het plannen en uitvoeren van marketingcampagnes. Je werkt samen met het team en houdt overzicht.
+      </p>
+
       <ul>
         <li>Campagnes plannen en bijhouden</li>
         <li>Meewerken aan content (social media en e-mail)</li>
@@ -152,8 +199,8 @@
       </ul>
     </section>
 
-    <section class="vacature">
-      <h2>Wat wij bieden</h2>
+    <section class="detail-tab-content" id="tab-bieden">
+      <h2>Wat bieden wij jou?</h2>
       <ul>
         <li>€ 3.000 – € 3.800 per maand</li>
         <li>Hybride werken</li>
