@@ -31,13 +31,17 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+
+  /* mobile first: 320px past beter met minder padding */
+  padding: 0 16px;
 
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+
+  /* mobile first: iets minder gap zodat het niet krap wordt */
+  gap: 12px;
 }
 
 .site-logo {
@@ -57,18 +61,29 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+
+  /* mobile first */
+  gap: 12px;
 }
 
 /* hamburger */
 .menu-open {
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--wt-border);
-  background: var(--wt-container);
-  border-radius: 10px;
+  /* mobile first: duidelijker zichtbaar */
+  width: 48px;
+  height: 48px;
+
+  border: 2px solid var(--wt-border);
+  background: #fff;
+  border-radius: 14px;
   cursor: pointer;
-  font-size: 18px;
+
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--wt-text-dark);
+
+  display: grid;
+  place-items: center;
 }
 
 /* desktop stuff standaard uit */
@@ -78,6 +93,12 @@ main {
 /* Desktop via container query (geen media queries) */
 @container header (min-width: 992px) {
   .menu-open { display: none; }
+
+  /* desktop: terug naar jouw oude spacing */
+  .header-inner{
+    padding: 0 24px;
+    gap: 16px;
+  }
 
   .main-nav {
     justify-content: space-between;
@@ -376,10 +397,16 @@ main {
 .mobile-menu {
   position: fixed;
   inset: 0;
+
+  /* mobile first: voorkomt rare breedte issues op mobiel */
+  width: 100%;
+  max-width: 100vw;
+
   background: var(--wt-container);
   z-index: 9999;
   padding: 18px 16px;
   overflow: auto;
+
   transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
@@ -695,7 +722,6 @@ main {
   border-radius: 999px;
 }
 
-
 /* Content blokken onder de tabs */
 .detail-tab-content{
   background: var(--wt-container);
@@ -712,7 +738,6 @@ main {
 }
 
    /* popup - solliciteren*/
-
 
 .wt-modal {
   width: min(640px, calc(100% - 32px));
@@ -783,9 +808,14 @@ main {
   outline-offset: 3px;
 }
 
+/* mobile first */
+.wt-modal__body .wt-btn {
+  width: 100%;
+}
+
 /* container query */
-@container modal (max-width: 520px) {
+@container modal (min-width: 520px) {
   .wt-modal__body .wt-btn {
-    width: 100%;
+    width: auto;
   }
 }
