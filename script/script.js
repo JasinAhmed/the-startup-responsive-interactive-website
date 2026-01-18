@@ -77,11 +77,28 @@ if (sliderTrack && slides.length && dots.length) {
     });
   });
 }
+//TABS voor de funciteomschrijving en
+const tabButtons = document.querySelectorAll('.detail-tab');
+const tabPanels = document.querySelectorAll('.detail-tab-content');
 
-/* ================================
-   SOLLICITATIE POPUP (HEEL SIMPEL)
-   Eerstejaars niveau
-================================ */
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+
+    // 1) active tab wisselen
+    tabButtons.forEach(b => b.classList.remove('is-active'));
+    button.classList.add('is-active');
+
+    // 2) content wisselen
+    tabPanels.forEach(panel => panel.classList.add('is-hidden'));
+    const targetPanel = document.getElementById(button.dataset.tab);
+    targetPanel.classList.remove('is-hidden');
+  });
+});
+
+
+
+  //  SOLLICITATIE POPUP (HEEL SIMPEL)
+   
 
 // ELEMENTEN SELECTEREN
 const openSollicitatieBtn = document.getElementById('openSollicitatie');

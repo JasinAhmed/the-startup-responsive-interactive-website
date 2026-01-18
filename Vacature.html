@@ -113,7 +113,7 @@
       <h1>Marketing Coördinator</h1>
       <p>werktijden.nl · Marketing</p>
 
-      <!-- ====== FIX: knop + dialog popup ====== -->
+      <!-- knop + dialog popup -->
       <button class="wt-btn wt-primary" type="button" id="openSollicitatie">
         Solliciteer nu
       </button>
@@ -159,7 +159,6 @@
           </fieldset>
         </form>
       </dialog>
-      <!-- ====== EINDE FIX ====== -->
 
       <ul class="vacature-info">
         <li>Utrecht / Hybride</li>
@@ -170,27 +169,26 @@
       </ul>
     </header>
 
-    <!-- ====== TABS (NIEUW) ====== -->
-    <nav class="detail-tabs">
-      <a class="detail-tab" href="#tab-werktijden">Werktijden.nl</a>
-      <a class="detail-tab" href="#tab-functie">Functie omschrijving</a>
-      <a class="detail-tab" href="#tab-bieden">Wat bieden wij jou?</a>
+    <!-- TABS-->
+    <nav class="detail-tabs" aria-label="Vacature tabs">
+      <button class="detail-tab is-active" type="button" data-tab="tab-werktijden">Over de functie</button>
+      <button class="detail-tab" type="button" data-tab="tab-functie">Wat ga je doen</button>
+      <button class="detail-tab" type="button" data-tab="tab-bieden">Wat wij bieden</button>
     </nav>
 
-    <!-- ====== TAB CONTENT (NIEUW) ====== -->
+    <!-- ====== TAB CONTENT (slechts 1 zichtbaar) ====== -->
     <section class="detail-tab-content" id="tab-werktijden">
-      <h2>Werktijden.nl</h2>
+      <h2>Over de functie</h2>
       <p>
         Werktijden.nl helpt bedrijven met roosterplanning en urenregistratie. We maken het makkelijker om te plannen en overzicht te houden.
       </p>
     </section>
 
-    <section class="detail-tab-content" id="tab-functie">
-      <h2>Functie omschrijving</h2>
+    <section class="detail-tab-content is-hidden" id="tab-functie">
+      <h2>Wat ga je doen</h2>
       <p>
         Als Marketing Coördinator help je mee met het plannen en uitvoeren van marketingcampagnes. Je werkt samen met het team en houdt overzicht.
       </p>
-
       <ul>
         <li>Campagnes plannen en bijhouden</li>
         <li>Meewerken aan content (social media en e-mail)</li>
@@ -199,8 +197,8 @@
       </ul>
     </section>
 
-    <section class="detail-tab-content" id="tab-bieden">
-      <h2>Wat bieden wij jou?</h2>
+    <section class="detail-tab-content is-hidden" id="tab-bieden">
+      <h2>Wat wij bieden</h2>
       <ul>
         <li>€ 3.000 – € 3.800 per maand</li>
         <li>Hybride werken</li>

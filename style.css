@@ -17,7 +17,7 @@ main {
   background: var(--wt-container);
   border-bottom: 1px solid var(--wt-border);
 
-  height: 72px;               /* vaste hoogte */
+  height: 72px;
   display: flex;
   align-items: center;
 
@@ -144,7 +144,7 @@ main {
   }
 }
 
-/* ====== PAGE HEADER ====== */
+/*PAGE HEADER */
 .page-header {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
@@ -160,7 +160,7 @@ main {
 
 .page-header p { margin: 0; }
 
-/* ====== VACATURE OVERZICHT ====== */
+/* VACATURE OVERZICHT */
 .vacature-overzicht { margin-top: 16px; }
 
 .vacature-overzicht > h2 {
@@ -168,7 +168,7 @@ main {
   font-size: 18px;
 }
 
-/* ====== VACATURE CARD ====== */
+/*VACATURE CARD*/
 .vacature {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
@@ -258,7 +258,7 @@ main {
   line-height: 1.4;
 }
 
-/* ====== VISUALLY HIDDEN ====== */
+/* VISUALLY HIDDEN  */
 .visually-hidden{
   position: absolute;
   width: 1px;
@@ -271,7 +271,7 @@ main {
   border: 0;
 }
 
-/* ====== VACATURE SLIDER ====== */
+/* VACATURE SLIDER */
 .vacature-slider {
   margin-top: 16px;
   position: relative;
@@ -372,7 +372,7 @@ main {
   .slider-dots { display: none; }
 }
 
-/* ====== MOBILE MENU ====== */
+/*MOBILE MENU */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -462,7 +462,7 @@ main {
   border: none;
 }
 
-/* ====== CHAT FAB ====== */
+/* CHAT FAB */
 .chat-fab {
   position: fixed;
   right: 16px;
@@ -479,7 +479,7 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* ====== ACCORDION ====== */
+/* ACCORDION */
 .accordion-btn{
   width: 100%;
   padding: 18px 16px;
@@ -537,7 +537,7 @@ main {
   display: block;
 }
 
-/* ====== FOOTER ====== */
+/*FOOTER */
 .footer {
   margin-top: 20px;
   background: linear-gradient(180deg, rgb(16, 24, 40), rgb(2, 6, 23));
@@ -598,6 +598,7 @@ main {
   .footer-brand { margin-bottom: 0; }
   .footer-column { margin-bottom: 0; }
 }
+
 /*  WCAG audit fix */
 
 /* Skip link: alleen zichtbaar als je met Tab navigeert */
@@ -628,6 +629,7 @@ main {
 .mobile-menu[hidden]{
   display: none;
 }
+
 /* ====== DETAIL TABS ====== */
 .detail-tabs{
   display: flex;
@@ -645,21 +647,54 @@ main {
   display: none;
 }
 
+/* ik gebruik nu buttons i.p.v. links */
+/* GROENE BALK WEG */
+.detail-tabs{
+  display: flex;
+  gap: 14px;
+  background: transparent;      /* <-- dit haalt de groene balk weg */
+  padding: 0;                   /* <-- geen extra ruimte */
+  border-radius: 0;
+  margin-top: 18px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.detail-tabs::-webkit-scrollbar{
+  display: none;
+}
+
+/* tabs blijven netjes als “pill/tab” */
 .detail-tab{
   background: var(--wt-container);
   color: var(--wt-text-dark);
-  text-decoration: none;
   font-weight: 800;
   padding: 12px 16px;
-  border-radius: 14px 14px 0 0;
+  border-radius: 14px;
   border: 1px solid var(--wt-border);
-  border-bottom: none;
+  cursor: pointer;
+  font: inherit;
   white-space: nowrap;
 }
 
-.detail-tab:hover{
-  opacity: 0.9;
+/* actieve tab */
+.detail-tab.is-active{
+  color: var(--wt-primary);
+  position: relative;
 }
+
+.detail-tab.is-active::after{
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 3px;
+  background: var(--wt-primary);
+  border-radius: 999px;
+}
+
 
 /* Content blokken onder de tabs */
 .detail-tab-content{
@@ -671,13 +706,13 @@ main {
   margin-bottom: 16px;
 }
 
-/* Smooth scroll naar tab content */
-html{
-  scroll-behavior: smooth;
+/* panel verbergen (zodat maar 1 zichtbaar is) */
+.is-hidden{
+  display: none;
 }
-/* ================================
-   Modal (popup) - Werktijden.nl
-================================ */
+
+   /* popup - solliciteren*/
+
 
 .wt-modal {
   width: min(640px, calc(100% - 32px));
@@ -687,6 +722,10 @@ html{
   background: var(--wt-container);
   color: var(--wt-text-dark);
   box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+
+  /* container query voor de popup*/
+  container-type: inline-size;
+  container-name: modal;
 }
 
 /* Overlay */
@@ -729,6 +768,7 @@ html{
 .wt-modal[open] {
   animation: wtModalIn 160ms ease-out;
 }
+
 @keyframes wtModalIn {
   from { opacity: 0; transform: translateY(10px) scale(0.98); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
@@ -743,8 +783,8 @@ html{
   outline-offset: 3px;
 }
 
-/* Optioneel: buttons onder elkaar op mobiel */
-@media (max-width: 520px) {
+/* container query */
+@container modal (max-width: 520px) {
   .wt-modal__body .wt-btn {
     width: 100%;
   }
