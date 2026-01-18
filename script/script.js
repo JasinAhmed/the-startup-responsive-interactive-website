@@ -16,17 +16,18 @@ const dots = document.querySelectorAll('.dot');
 // START: MENU IS ECHT DICHT
 mobileMenu.hidden = true;
 
-
-// MENU OPENEN
-
+// MENU OPENEN (smooth)
 openButton.addEventListener('click', () => {
-  mobileMenu.hidden = false;            // menu bestaat nu voor screenreaders
-  mobileMenu.classList.add('is-open');  // animatie / styling
-  closeButton.focus();                  // focus naar sluitknop
+  mobileMenu.hidden = false; // menu bestaat nu voor screenreaders
+
+  // 1 frame wachten zodat de browser eerst de "dichte" state kan tekenen
+  requestAnimationFrame(() => {
+    mobileMenu.classList.add('is-open'); // nu gaat hij smooth open
+    closeButton.focus();                 // focus naar sluitknop
+  });
 });
 
-// MENU SLUITEN
-
+// MENU SLUITEN (smooth)
 closeButton.addEventListener('click', () => {
   mobileMenu.classList.remove('is-open');
 
@@ -37,26 +38,23 @@ closeButton.addEventListener('click', () => {
   // wacht tot animatie klaar is, dan pas echt verbergen
   setTimeout(() => {
     mobileMenu.hidden = true;
-    openButton.focus();                 // focus terug naar hamburger
+    openButton.focus(); // focus terug naar hamburger
   }, 300);
 });
 
 // FUNCTIES OPENEN / SLUITEN
-
 functiesButton.addEventListener('click', () => {
   functiesItem.classList.toggle('open');
   branchesItem.classList.remove('open');
 });
 
-
 // BRANCHES OPENEN / SLUITEN
-
 branchesButton.addEventListener('click', () => {
   branchesItem.classList.toggle('open');
   functiesItem.classList.remove('open');
 });
 
-// 6. SLIDER DOTS (KLIK + SCROLL)
+// SLIDER DOTS (KLIK + SCROLL)
 // if is nodig zodat je geen error krijgt als je dit op een pagina zonder slider gebruikt.
 if (sliderTrack && slides.length && dots.length) {
 
