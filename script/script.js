@@ -1,4 +1,4 @@
-// 1. ELEMENTEN SELECTEREN
+// ELEMENTEN SELECTEREN
 const openButton = document.querySelector('.menu-open');
 const closeButton = document.querySelector('.menu-close');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -13,27 +13,44 @@ const sliderTrack = document.querySelector('.slider-track');
 const slides = document.querySelectorAll('.slider-track .vacature');
 const dots = document.querySelectorAll('.dot');
 
-// 2. MENU OPENEN
+// START: MENU IS ECHT DICHT
+mobileMenu.hidden = true;
+
+
+// MENU OPENEN
+
 openButton.addEventListener('click', () => {
-  mobileMenu.classList.add('is-open');
+  mobileMenu.hidden = false;            // menu bestaat nu voor screenreaders
+  mobileMenu.classList.add('is-open');  // animatie / styling
+  closeButton.focus();                  // focus naar sluitknop
 });
 
-// 3. MENU SLUITEN
+// MENU SLUITEN
+
 closeButton.addEventListener('click', () => {
   mobileMenu.classList.remove('is-open');
 
   // alles ook dichtzetten
   functiesItem.classList.remove('open');
   branchesItem.classList.remove('open');
+
+  // wacht tot animatie klaar is, dan pas echt verbergen
+  setTimeout(() => {
+    mobileMenu.hidden = true;
+    openButton.focus();                 // focus terug naar hamburger
+  }, 300);
 });
 
-// 4. FUNCTIES OPENEN / SLUITEN
+// FUNCTIES OPENEN / SLUITEN
+
 functiesButton.addEventListener('click', () => {
   functiesItem.classList.toggle('open');
   branchesItem.classList.remove('open');
 });
 
-// 5. BRANCHES OPENEN / SLUITEN
+
+// BRANCHES OPENEN / SLUITEN
+
 branchesButton.addEventListener('click', () => {
   branchesItem.classList.toggle('open');
   functiesItem.classList.remove('open');
