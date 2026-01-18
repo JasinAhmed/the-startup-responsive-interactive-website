@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Werken bij – Vacatures | Werktijden</title>
   <meta name="description" content="Bekijk de openstaande vacatures bij Werktijden.nl.">
 
@@ -12,14 +13,19 @@
 
 <body>
 
+  <!-- Skip link (voor toetsenbord gebruikers) -->
+  <a class="skip-link" href="#main">Ga naar inhoud</a>
+
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="site-logo">werktijden.nl</a>
 
       <nav class="main-nav">
-        <!-- Mobiel: hamburger -->
-        <button class="menu-open" type="button">☰</button>
+        <!-- Mobiel: hamburger (met verborgen tekst) -->
+        <button class="menu-open" type="button">
+          ☰ <span class="visually-hidden">Menu openen</span>
+        </button>
 
         <!-- Desktop: menu-items -->
         <ul class="desktop-nav">
@@ -39,13 +45,15 @@
     </div>
   </header>
 
-  <!-- Mobile menu -->
-  <section class="mobile-menu" id="mobile-menu">
+  <!-- Mobile menu (standaard hidden) -->
+  <section class="mobile-menu" id="mobile-menu" hidden>
     <h2 class="visually-hidden">Mobiel menu</h2>
 
     <header class="mobile-menu-header">
       <a href="/" class="mobile-menu-logo">werktijden.nl</a>
-      <button class="menu-close" type="button">✕</button>
+      <button class="menu-close" type="button">
+        ✕ <span class="visually-hidden">Menu sluiten</span>
+      </button>
     </header>
 
     <ul class="mobile-menu-list">
@@ -106,7 +114,7 @@
   </section>
 
   <!-- Main content -->
-  <main>
+  <main id="main">
 
     <!-- Pagina intro -->
     <header class="page-header">
@@ -128,7 +136,7 @@
         <article class="vacature">
           <header>
             <p class="vacature-badge">Nieuw</p>
-            <h2>Klantadviseur</h2>
+            <h3>Klantadviseur</h3>
             <p>Werktijden.nl B.V. · Amsterdam</p>
           </header>
 
@@ -146,14 +154,14 @@
             Heb je ervaring in klantcontact binnen een B2B-omgeving...
           </p>
 
-          <a href="Vacature.html">Vacature bekijken</a>
+          <a href="Vacature.html">Bekijk vacature Klantadviseur</a>
         </article>
 
         <!-- Vacature 2 -->
         <article class="vacature">
           <header>
             <p class="vacature-badge">Nieuw</p>
-            <h2>Frontend Developer</h2>
+            <h3>Frontend Developer</h3>
             <p>Werktijden.nl B.V. · Amsterdam</p>
           </header>
 
@@ -169,14 +177,14 @@
             Werk aan moderne interfaces, verbeter de user experience en bouw mee aan een product dat dagelijks gebruikt wordt...
           </p>
 
-          <a href="Vacature.html">Vacature bekijken</a>
+          <a href="Vacature.html">Bekijk vacature Frontend Developer</a>
         </article>
 
         <!-- Vacature 3 -->
         <article class="vacature">
           <header>
             <p class="vacature-badge">Nieuw</p>
-            <h2>Marketing Coördinator</h2>
+            <h3>Marketing Coördinator</h3>
             <p>Werktijden.nl B.V. · Amsterdam</p>
           </header>
 
@@ -192,7 +200,7 @@
             Zet campagnes op, analyseer resultaten en zorg dat Werktijden.nl online beter zichtbaar wordt...
           </p>
 
-          <a href="Vacature.html">Vacature bekijken</a>
+          <a href="Vacature.html">Bekijk vacature Marketing Coördinator</a>
         </article>
 
       </section>
@@ -200,9 +208,15 @@
       <section class="slider-dots">
         <h3 class="visually-hidden">Navigatie vacatures</h3>
 
-        <button class="dot is-active" type="button"></button>
-        <button class="dot" type="button"></button>
-        <button class="dot" type="button"></button>
+        <button class="dot is-active" type="button">
+          <span class="visually-hidden">Vacature 1</span>
+        </button>
+        <button class="dot" type="button">
+          <span class="visually-hidden">Vacature 2</span>
+        </button>
+        <button class="dot" type="button">
+          <span class="visually-hidden">Vacature 3</span>
+        </button>
       </section>
 
     </section>

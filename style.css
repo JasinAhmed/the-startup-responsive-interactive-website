@@ -598,3 +598,33 @@ main {
   .footer-brand { margin-bottom: 0; }
   .footer-column { margin-bottom: 0; }
 }
+/*  WCAG audit fix */
+
+/* Skip link: alleen zichtbaar als je met Tab navigeert */
+.skip-link{
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--wt-primary);
+  color: var(--wt-text-light);
+  text-decoration: none;
+  transform: translateY(-200%);
+  z-index: 10000;
+}
+
+.skip-link:focus{
+  transform: translateY(0);
+}
+
+/* Focus zichtbaar maken voor toetsenbord */
+:focus-visible{
+  outline: 3px solid var(--wt-primary);
+  outline-offset: 3px;
+}
+
+/* Als mobile menu hidden is, moet hij echt weg zijn */
+.mobile-menu[hidden]{
+  display: none;
+}
