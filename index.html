@@ -18,10 +18,10 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="header-inner">
+    <section class="header-inner">
       <a href="/" class="site-logo">werktijden.nl</a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Hoofdnavigatie">
         <!-- Mobiel: hamburger (met verborgen tekst) -->
         <button class="menu-open" type="button">
           ☰ <span class="visually-hidden">Menu openen</span>
@@ -37,12 +37,12 @@
         </ul>
 
         <!-- Desktop: knoppen rechts -->
-        <div class="header-actions">
+        <section class="header-actions" aria-label="Account acties">
           <a class="header-btn header-btn-outline" href="#">Inloggen</a>
           <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
-        </div>
+        </section>
       </nav>
-    </div>
+    </section>
   </header>
 
   <!-- Mobile menu (standaard hidden) -->
@@ -103,14 +103,14 @@
       <li><a href="index.html">Vacatures</a></li>
     </ul>
 
-    <section class="mobile-menu-bottom">
+    <section class="mobile-menu-bottom" aria-label="Account acties mobiel">
       <h2 class="visually-hidden">Account acties</h2>
 
       <a class="mobile-btn mobile-btn-outline" href="#">Inloggen</a>
       <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
     </section>
 
-    <a class="chat-fab" href="#">💬</a>
+    <a class="chat-fab" href="#" aria-label="Chat openen">💬</a>
   </section>
 
   <!-- Main content -->
@@ -129,7 +129,7 @@
     <section class="vacature-slider">
       <h2 class="visually-hidden">Vacatures</h2>
 
-      <section class="slider-track">
+      <section class="slider-track" aria-label="Vacature overzicht">
         <h3 class="visually-hidden">Vacature overzicht</h3>
 
         <!-- Vacature 1 -->
@@ -205,7 +205,7 @@
 
       </section>
 
-      <section class="slider-dots">
+      <section class="slider-dots" aria-label="Navigatie vacatures">
         <h3 class="visually-hidden">Navigatie vacatures</h3>
 
         <button class="dot is-active" type="button">
