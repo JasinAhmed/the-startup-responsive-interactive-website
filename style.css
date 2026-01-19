@@ -91,7 +91,7 @@ main {
 .header-actions { display: none; }
 
 /* Desktop via container query (geen media queries) */
-@container header (min-width: 992px) {
+@container header (min-width: 1024px) {
   .menu-open { display: none; }
 
   /* desktop: terug naar jouw oude spacing */
