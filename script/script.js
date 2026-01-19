@@ -20,7 +20,7 @@ mobileMenu.hidden = true;
 openButton.addEventListener('click', () => {
   mobileMenu.hidden = false; // menu bestaat nu voor screenreaders
 
-  // 1 frame wachten zodat de browser eerst de "dichte" state kan tekenen
+  // 1 frame wachten zodat de browser het kan lezen
   requestAnimationFrame(() => {
     mobileMenu.classList.add('is-open'); // nu gaat hij smooth open
     closeButton.focus();                 // focus naar sluitknop
