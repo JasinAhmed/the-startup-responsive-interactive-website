@@ -96,23 +96,3 @@ tabButtons.forEach(button => {
 });
 
 
-
-  //  SOLLICITATIE POPUP (HEEL SIMPEL)
-   
-
-// ELEMENTEN SELECTEREN
-const openSollicitatieBtn = document.getElementById('openSollicitatie');
-const sollicitatieModal = document.getElementById('sollicitatieModal');
-const closeSollicitatieBtn = document.getElementById('closeSollicitatie');
-
-// POPUP OPENEN
-openSollicitatieBtn.addEventListener('click', () => {
-  // laat de popup zien
-  sollicitatieModal.showModal();
-});
-
-// POPUP SLUITEN
-closeSollicitatieBtn.addEventListener('click', () => {
-  // sluit de popup
-  sollicitatieModal.close();
-});
