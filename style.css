@@ -12,273 +12,6 @@ main {
   margin: 0 auto;
 }
 
-/* ====== HEADER (CONTAINER QUERIES, WERKTIJDEN LOOK) ====== */
-.site-header {
-  background: var(--wt-container);
-  border-bottom: 1px solid var(--wt-border);
-
-  height: 72px;
-  display: flex;
-  align-items: center;
-
-  /* container query aan */
-  container-type: inline-size;
-  container-name: header;
-}
-
-/* inner container = zorgt dat het net als werktijden.nl gecentreerd staat */
-.header-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  /* mobile first: 320px past beter met minder padding */
-  padding: 0 16px;
-
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  /* mobile first: iets minder gap zodat het niet krap wordt */
-  gap: 12px;
-}
-
-.site-logo {
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--wt-primary);
-  text-decoration: none;
-
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  line-height: 1;
-}
-
-.main-nav {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  /* mobile first */
-  gap: 12px;
-}
-
-/* hamburger */
-.menu-open {
-  /* mobile first: duidelijker zichtbaar */
-  width: 48px;
-  height: 48px;
-
-  border: 2px solid var(--wt-border);
-  background: #fff;
-  border-radius: 14px;
-  cursor: pointer;
-
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--wt-text-dark);
-
-  display: grid;
-  place-items: center;
-}
-
-/* desktop stuff standaard uit */
-.desktop-nav { display: none; }
-.header-actions { display: none; }
-
-/* Desktop via container query (geen media queries) */
-@container header (min-width: 1024px) {
-  .menu-open { display: none; }
-
-  /* desktop: terug naar jouw oude spacing */
-  .header-inner{
-    padding: 0 24px;
-    gap: 16px;
-  }
-
-  .main-nav {
-    justify-content: space-between;
-    gap: 24px;
-  }
-
-  .desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-  }
-
-  .nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 4px;
-    font-weight: 600;
-    color: var(--wt-text-dark);
-    text-decoration: none;
-    line-height: 1;
-  }
-
-  .nav-link--dropdown::after {
-    content: "⌄";
-    font-size: 14px;
-    line-height: 1;
-    opacity: 0.9;
-  }
-
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0;
-  }
-
-  .header-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 16px;
-    border-radius: 999px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-    line-height: 1;
-  }
-
-  .header-btn-outline {
-    border: 1px solid var(--wt-border);
-    background: var(--wt-container);
-    color: var(--wt-text-dark);
-  }
-
-  .header-btn-primary {
-    background: var(--wt-primary);
-    color: var(--wt-text-light);
-    border: none;
-  }
-}
-
-/*PAGE HEADER */
-.page-header {
-  background: var(--wt-container);
-  border: 1px solid var(--wt-border);
-  padding: 16px;
-  margin-top: 16px;
-  border-radius: 18px;
-}
-
-.page-header h1 {
-  margin: 0 0 8px;
-  font-size: 28px;
-}
-
-.page-header p { margin: 0; }
-
-/* VACATURE OVERZICHT */
-.vacature-overzicht { margin-top: 16px; }
-
-.vacature-overzicht > h2 {
-  margin: 0 0 12px;
-  font-size: 18px;
-}
-
-/*VACATURE CARD*/
-.vacature {
-  background: var(--wt-container);
-  border: 1px solid var(--wt-border);
-  border-radius: 24px;
-  padding: 18px;
-  margin-bottom: 16px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-/* Badge */
-.vacature-badge {
-  display: inline-block;
-  margin: 0 0 12px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(5, 150, 105, 0.12);
-  color: var(--wt-primary);
-  font-weight: 800;
-  font-size: 14px;
-}
-
-/* Titel */
-.vacature h3,
-.vacature h2 {
-  margin: 8px 0 6px;
-  font-size: 24px;
-  line-height: 1.2;
-}
-
-.vacature p { margin: 0 0 12px; }
-
-/* Bubble info list */
-.vacature-info {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.vacature-info li {
-  background: var(--wt-section-bg);
-  border: 1px solid var(--wt-border);
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-/* Salaris bubble */
-.vacature-salaris {
-  display: inline-block;
-  margin: 0 0 14px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: var(--wt-section-bg);
-  border: 1px solid var(--wt-border);
-  font-weight: 800;
-}
-
-/* Button link */
-.vacature a {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: var(--wt-primary);
-  color: var(--wt-text-light);
-  font-weight: 900;
-  text-decoration: none;
-
-  margin-top: auto;
-}
-
-.vacature a:hover {
-  opacity: 0.95;
-  text-decoration: none;
-}
-
-.vacature-tekst {
-  margin: 0 0 14px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
 /* VISUALLY HIDDEN  */
 .visually-hidden{
   position: absolute;
@@ -292,7 +25,266 @@ main {
   border: 0;
 }
 
-/* VACATURE SLIDER */
+/* ====== HEADER (CONTAINER QUERIES, WERKTIJDEN LOOK) ====== */
+.site-header {
+  background: var(--wt-container);
+  border-bottom: 1px solid var(--wt-border);
+
+  height: 72px;
+  display: flex;
+  align-items: center;
+
+  container-type: inline-size;
+  container-name: header;
+
+  .header-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 0 16px;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+  }
+
+  .site-logo {
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--wt-primary);
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+  }
+
+  .main-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .menu-open {
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid var(--wt-border);
+    background: #fff;
+    border-radius: 14px;
+    cursor: pointer;
+
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--wt-text-dark);
+
+    display: grid;
+    place-items: center;
+  }
+
+  /* desktop stuff standaard uit */
+  .desktop-nav { display: none; }
+  .header-actions { display: none; }
+
+  /* Desktop via container query */
+  @container header (min-width: 1024px) {
+    .menu-open { display: none; }
+
+    .header-inner{
+      padding: 0 24px;
+      gap: 16px;
+    }
+
+    .main-nav {
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 4px;
+      font-weight: 600;
+      color: var(--wt-text-dark);
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .nav-link--dropdown::after {
+      content: "⌄";
+      font-size: 14px;
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .header-btn-outline {
+      border: 1px solid var(--wt-border);
+      background: var(--wt-container);
+      color: var(--wt-text-dark);
+    }
+
+    .header-btn-primary {
+      background: var(--wt-primary);
+      color: var(--wt-text-light);
+      border: none;
+    }
+  }
+}
+
+/* ====== PAGE HEADER ====== */
+.page-header {
+  background: var(--wt-container);
+  border: 1px solid var(--wt-border);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 18px;
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+  }
+
+  p { margin: 0; }
+}
+
+/* ====== VACATURE OVERZICHT ====== */
+.vacature-overzicht {
+  margin-top: 16px;
+
+  > h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+}
+
+/* ====== VACATURE CARD ====== */
+.vacature {
+  background: var(--wt-container);
+  border: 1px solid var(--wt-border);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* Badge */
+  .vacature-badge {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(5, 150, 105, 0.12);
+    color: var(--wt-primary);
+    font-weight: 800;
+    font-size: 14px;
+  }
+
+  h3,
+  h2 {
+    margin: 8px 0 6px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  p { margin: 0 0 12px; }
+
+  /* Bubble info list */
+  .vacature-info {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    li {
+      background: var(--wt-section-bg);
+      border: 1px solid var(--wt-border);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  /* Salaris bubble */
+  .vacature-salaris {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--wt-section-bg);
+    border: 1px solid var(--wt-border);
+    font-weight: 800;
+  }
+
+  .vacature-tekst {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Button link */
+  a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: var(--wt-primary);
+    color: var(--wt-text-light);
+    font-weight: 900;
+    text-decoration: none;
+
+    margin-top: auto;
+
+    &:hover {
+      opacity: 0.95;
+      text-decoration: none;
+    }
+  }
+}
+
+/* ====== VACATURE SLIDER ====== */
 .vacature-slider {
   margin-top: 16px;
   position: relative;
@@ -302,103 +294,103 @@ main {
 
   container-type: inline-size;
   container-name: vacatures;
-}
 
-.slider-track {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  border-radius: 24px;
-}
-
-.slider-track::-webkit-scrollbar { display: none; }
-.slider-track { -ms-overflow-style: none; scrollbar-width: none; }
-
-.slider-track .vacature {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  margin-bottom: 0;
-}
-
-/* pijlen mobiel */
-.slider-arrow {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--wt-border);
-  background: var(--wt-container);
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  color: var(--wt-text-dark);
-  border-radius: 8px;
-  position: absolute;
-  top: 8px;
-}
-
-.slider-arrow-left { left: 8px; }
-.slider-arrow-right { right: 8px; }
-
-/* Dots */
-.slider-dots {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.dot {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-}
-
-.dot::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--wt-border);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.dot.is-active::after { background: rgb(4, 120, 87); }
-
-/* Desktop vacatures via container query */
-@container vacatures (min-width: 992px) {
   .slider-track {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    overflow: visible;
-    scroll-snap-type: none;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 24px;
+
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .vacature {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      margin-bottom: 0;
+    }
   }
 
-  .slider-track .vacature {
-    flex: unset;
-    scroll-snap-align: unset;
-    margin-bottom: 0;
+  /* pijlen mobiel */
+  .slider-arrow {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--wt-border);
+    background: var(--wt-container);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--wt-text-dark);
+    border-radius: 8px;
+    position: absolute;
+    top: 8px;
   }
 
-  .slider-dots { display: none; }
+  .slider-arrow-left { left: 8px; }
+  .slider-arrow-right { right: 8px; }
+
+  /* Dots */
+  .slider-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--wt-border);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.is-active::after { background: rgb(4, 120, 87); }
+  }
+
+  /* Desktop vacatures via container query */
+  @container vacatures (min-width: 992px) {
+    .slider-track {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      overflow: visible;
+      scroll-snap-type: none;
+
+      .vacature {
+        flex: unset;
+        scroll-snap-align: unset;
+        margin-bottom: 0;
+      }
+    }
+
+    .slider-dots { display: none; }
+  }
 }
 
-/*MOBILE MENU */
+/* ====== MOBILE MENU ====== */
 .mobile-menu {
   position: fixed;
   inset: 0;
 
-  /* mobile first: voorkomt rare breedte issues op mobiel */
   width: 100%;
   max-width: 100vw;
 
@@ -411,85 +403,89 @@ main {
   opacity: 0;
   pointer-events: none;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+  &.is-open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &[hidden]{
+    display: none;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+
+  .mobile-menu-logo {
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--wt-primary);
+    text-decoration: none;
+  }
+
+  .menu-close {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--wt-text-dark);
+  }
+
+  .mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      border-bottom: 1px solid var(--wt-border);
+
+      > a {
+        display: block;
+        padding: 18px 16px;
+        color: var(--wt-text-dark);
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .mobile-menu-bottom {
+    margin-top: 18px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .mobile-btn {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .mobile-btn-outline {
+    border: 1px solid var(--wt-border);
+    color: var(--wt-text-dark);
+    background: var(--wt-container);
+  }
+
+  .mobile-btn-primary {
+    background: var(--wt-primary);
+    color: var(--wt-text-light);
+    border: none;
+  }
 }
 
-.mobile-menu.is-open {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.mobile-menu-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 22px;
-}
-
-.mobile-menu-logo {
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--wt-primary);
-  text-decoration: none;
-}
-
-.menu-close {
-  width: 44px;
-  height: 44px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 28px;
-  line-height: 1;
-  color: var(--wt-text-dark);
-}
-
-.mobile-menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobile-menu-list > li {
-  border-bottom: 1px solid var(--wt-border);
-}
-
-.mobile-menu-list > li > a {
-  display: block;
-  padding: 18px 16px;
-  color: var(--wt-text-dark);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.mobile-menu-bottom {
-  margin-top: 18px;
-  display: grid;
-  gap: 12px;
-}
-
-.mobile-btn {
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 14px;
-  font-weight: 900;
-  text-decoration: none;
-}
-
-.mobile-btn-outline {
-  border: 1px solid var(--wt-border);
-  color: var(--wt-text-dark);
-  background: var(--wt-container);
-}
-
-.mobile-btn-primary {
-  background: var(--wt-primary);
-  color: var(--wt-text-light);
-  border: none;
-}
-
-/* CHAT FAB */
+/* ====== CHAT FAB ====== */
 .chat-fab {
   position: fixed;
   right: 16px;
@@ -506,7 +502,7 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* ACCORDION */
+/* ====== ACCORDION ====== */
 .accordion-btn{
   width: 100%;
   padding: 18px 16px;
@@ -533,38 +529,42 @@ main {
   margin: 8px 0 0;
   padding: 0;
   display: none;
+
+  li{
+    border-bottom: 1px solid var(--wt-border);
+  }
+
+  a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 16px;
+    font-weight: 700;
+    color: var(--wt-text-dark);
+    text-decoration: none;
+  }
 }
 
-.submenu li{
-  border-bottom: 1px solid var(--wt-border);
+.accordion {
+  &.open {
+    .accordion-btn{
+      background: rgba(5, 150, 105, 0.12);
+      color: var(--wt-primary);
+      border: 1px solid var(--wt-border);
+    }
+
+    .arrow{
+      color: var(--wt-primary);
+      transform: rotate(180deg);
+    }
+
+    .submenu{
+      display: block;
+    }
+  }
 }
 
-.submenu a{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 16px;
-  font-weight: 700;
-  color: var(--wt-text-dark);
-  text-decoration: none;
-}
-
-.accordion.open .accordion-btn{
-  background: rgba(5, 150, 105, 0.12);
-  color: var(--wt-primary);
-  border: 1px solid var(--wt-border);
-}
-
-.accordion.open .arrow{
-  color: var(--wt-primary);
-  transform: rotate(180deg);
-}
-
-.accordion.open .submenu{
-  display: block;
-}
-
-/*FOOTER */
+/* ====== FOOTER ====== */
 .footer {
   margin-top: 20px;
   background: linear-gradient(180deg, rgb(16, 24, 40), rgb(2, 6, 23));
@@ -573,62 +573,59 @@ main {
 
   container-type: inline-size;
   container-name: footer;
-}
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-brand { margin-bottom: 28px; }
-
-.footer-logo {
-  margin: 0 0 12px;
-  color: var(--wt-primary);
-  font-weight: 900;
-  font-size: 26px;
-}
-
-.footer-column { margin-bottom: 28px; }
-
-.footer-column h3 {
-  margin: 0 0 14px;
-  font-size: 16px;
-  font-weight: 900;
-}
-
-.footer-column ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-column li { margin-bottom: 10px; }
-
-.footer a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer a:hover { color: var(--wt-text-light); }
-
-/* desktop footer via container query */
-@container footer (min-width: 992px) {
   .footer-container {
-    display: grid;
-    grid-template-columns: 1.3fr repeat(4, 1fr);
-    gap: 48px;
-    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .footer-brand { margin-bottom: 0; }
-  .footer-column { margin-bottom: 0; }
+  .footer-brand { margin-bottom: 28px; }
+
+  .footer-logo {
+    margin: 0 0 12px;
+    color: var(--wt-primary);
+    font-weight: 900;
+    font-size: 26px;
+  }
+
+  .footer-column { margin-bottom: 28px; }
+
+  .footer-column h3 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-column li { margin-bottom: 10px; }
+
+  a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover { color: var(--wt-text-light); }
+  }
+
+  @container footer (min-width: 992px) {
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(4, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .footer-brand { margin-bottom: 0; }
+    .footer-column { margin-bottom: 0; }
+  }
 }
 
-/*  WCAG audit fix */
-
-/* Skip link: alleen zichtbaar als je met Tab navigeert */
+/* ====== WCAG audit fix ====== */
 .skip-link{
   position: absolute;
   left: 12px;
@@ -640,89 +637,62 @@ main {
   text-decoration: none;
   transform: translateY(-200%);
   z-index: 10000;
+
+  &:focus{
+    transform: translateY(0);
+  }
 }
 
-.skip-link:focus{
-  transform: translateY(0);
-}
-
-/* Focus zichtbaar maken voor toetsenbord */
 :focus-visible{
   outline: 3px solid var(--wt-primary);
   outline-offset: 3px;
-}
-
-/* Als mobile menu hidden is, moet hij echt weg zijn */
-.mobile-menu[hidden]{
-  display: none;
 }
 
 /* ====== DETAIL TABS ====== */
 .detail-tabs{
   display: flex;
   gap: 14px;
-  background: var(--wt-primary);
-  padding: 18px 18px 0;
-  border-radius: 18px;
-  margin-top: 18px;
-
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.detail-tabs::-webkit-scrollbar{
-  display: none;
-}
-
-/* ik gebruik nu buttons i.p.v. links */
-/* GROENE BALK WEG */
-.detail-tabs{
-  display: flex;
-  gap: 14px;
-  background: transparent;      /* <-- dit haalt de groene balk weg */
-  padding: 0;                   /* <-- geen extra ruimte */
+  background: transparent;
+  padding: 0;
   border-radius: 0;
   margin-top: 18px;
 
   overflow-x: auto;
   scrollbar-width: none;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+  .detail-tab{
+    background: var(--wt-container);
+    color: var(--wt-text-dark);
+    font-weight: 800;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--wt-border);
+    cursor: pointer;
+    font: inherit;
+    white-space: nowrap;
+
+    &.is-active{
+      color: var(--wt-primary);
+      position: relative;
+
+      &::after{
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 6px;
+        height: 3px;
+        background: var(--wt-primary);
+        border-radius: 999px;
+      }
+    }
+  }
 }
 
-.detail-tabs::-webkit-scrollbar{
-  display: none;
-}
-
-/* tabs blijven netjes als “pill/tab” */
-.detail-tab{
-  background: var(--wt-container);
-  color: var(--wt-text-dark);
-  font-weight: 800;
-  padding: 12px 16px;
-  border-radius: 14px;
-  border: 1px solid var(--wt-border);
-  cursor: pointer;
-  font: inherit;
-  white-space: nowrap;
-}
-
-/* actieve tab */
-.detail-tab.is-active{
-  color: var(--wt-primary);
-  position: relative;
-}
-
-.detail-tab.is-active::after{
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 6px;
-  height: 3px;
-  background: var(--wt-primary);
-  border-radius: 999px;
-}
-
-/* Content blokken onder de tabs */
 .detail-tab-content{
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
@@ -732,90 +702,6 @@ main {
   margin-bottom: 16px;
 }
 
-/* panel verbergen (zodat maar 1 zichtbaar is) */
 .is-hidden{
   display: none;
-}
-
-   /* popup - solliciteren*/
-
-.wt-modal {
-  width: min(640px, calc(100% - 32px));
-  border: 0;
-  padding: 0;
-  border-radius: 16px;
-  background: var(--wt-container);
-  color: var(--wt-text-dark);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
-
-  /* container query voor de popup*/
-  container-type: inline-size;
-  container-name: modal;
-}
-
-/* Overlay */
-.wt-modal::backdrop {
-  background: rgba(15, 23, 42, 0.55);
-}
-
-/* Header */
-.wt-modal__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--wt-border);
-}
-
-.wt-modal__title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.wt-modal__close {
-  border: 1px solid var(--wt-border);
-  background: var(--wt-container);
-  border-radius: 10px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Body */
-.wt-modal__body {
-  padding: 18px;
-}
-
-/* Animatie */
-.wt-modal[open] {
-  animation: wtModalIn 160ms ease-out;
-}
-
-@keyframes wtModalIn {
-  from { opacity: 0; transform: translateY(10px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* Focus netjes */
-.wt-modal__close:focus-visible,
-.wt-modal .wt-btn:focus-visible,
-.wt-modal input:focus-visible,
-.wt-modal textarea:focus-visible {
-  outline: 3px solid rgba(22, 84, 65, 0.35);
-  outline-offset: 3px;
-}
-
-/* mobile first */
-.wt-modal__body .wt-btn {
-  width: 100%;
-}
-
-/* container query */
-@container modal (min-width: 520px) {
-  .wt-modal__body .wt-btn {
-    width: auto;
-  }
 }
