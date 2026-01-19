@@ -9,113 +9,75 @@
 
   <link rel="stylesheet" href="Styleguide-Stylesheet/styleguide.css">
   <link rel="stylesheet" href="style.css">
+  <script src="script/script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- Skip link (voor toetsenbord gebruikers) -->
+  <!-- Skip link -->
   <a class="skip-link" href="#main">Ga naar inhoud</a>
 
-  <!-- Header -->
-<header class="site-header">
-  <section class="header-inner">
-    <h2 class="visually-hidden">Hoofdnavigatie</h2>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <section class="header-inner">
+      <h2 class="visually-hidden">Hoofdnavigatie</h2>
 
-    <a href="index.html" class="site-logo">
-      <img src="assets/logowerk.svg" alt="Werktijden.nl">
-    </a>
+      <a href="index.html" class="site-logo">
+        <img src="assets/logowerk.svg" alt="Werktijden.nl">
+      </a>
 
-    <nav class="main-nav" aria-label="Hoofdnavigatie">
-      <button class="menu-open" type="button">
-        ☰ <span class="visually-hidden">Menu openen</span>
-      </button>
+      <nav class="main-nav">
+        <button class="menu-open" type="button">
+          ☰ <span class="visually-hidden">Menu openen</span>
+        </button>
 
-      <ul class="desktop-nav">
-        <li><a class="nav-link nav-link--dropdown" href="#">Functies</a></li>
-        <li><a class="nav-link nav-link--dropdown" href="#">Branches</a></li>
-        <li><a class="nav-link" href="#">Klanten</a></li>
-        <li><a class="nav-link" href="#">Koppelingen</a></li>
-        <li><a class="nav-link" href="#">Tarieven</a></li>
-      </ul>
+        <ul class="desktop-nav">
+          <li><a class="nav-link nav-link--dropdown" href="#">Functies</a></li>
+          <li><a class="nav-link nav-link--dropdown" href="#">Branches</a></li>
+          <li><a class="nav-link" href="#">Klanten</a></li>
+          <li><a class="nav-link" href="#">Koppelingen</a></li>
+          <li><a class="nav-link" href="#">Tarieven</a></li>
+        </ul>
 
-      <section class="header-actions" aria-label="Account acties">
-        <h3 class="visually-hidden">Account acties</h3>
-        <a class="header-btn header-btn-outline" href="#">Inloggen</a>
-        <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
-      </section>
-    </nav>
-  </section>
-</header>
+        <section class="header-actions">
+          <h3 class="visually-hidden">Account acties</h3>
+          <a class="header-btn header-btn-outline" href="#">Inloggen</a>
+          <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
+        </section>
+      </nav>
+    </section>
+  </header>
 
-  <!-- Mobile menu (standaard hidden) -->
+  <!-- ================= MOBILE MENU ================= -->
   <section class="mobile-menu" id="mobile-menu" hidden>
     <h2 class="visually-hidden">Mobiel menu</h2>
 
     <header class="mobile-menu-header">
-      <a href="/" class="mobile-menu-logo">werktijden.nl</a>
+      <a href="index.html" class="mobile-menu-logo">werktijden.nl</a>
       <button class="menu-close" type="button">
         ✕ <span class="visually-hidden">Menu sluiten</span>
       </button>
     </header>
 
     <ul class="mobile-menu-list">
-
-      <!-- Functies (uitklapbaar) -->
-      <li class="accordion functies">
-        <button class="accordion-btn functies-btn" type="button">
-          Functies <span class="arrow">⌄</span>
-        </button>
-
-        <ul class="submenu">
-          <li><a href="https://werktijden.nl/personeelsplanning">🕒 Personeelsplanning</a></li>
-          <li><a href="https://werktijden.nl/verlofregistratie">🎒 Verlofregistratie</a></li>
-          <li><a href="https://werktijden.nl/urenregistratie">📋 Urenregistratie</a></li>
-          <li><a href="https://werktijden.nl/prikklok">⏱️ Prikklok</a></li>
-          <li><a href="https://werktijden.nl/rooster-maken">🗓️ Rooster maken</a></li>
-          <li><a href="https://werktijden.nl/mobiele-app">📱 Mobiele app</a></li>
-          <li><a href="https://werktijden.nl/evenementen-planning">📅 Evenementen planning</a></li>
-          <li><a href="https://werktijden.nl/verzuimregistratie">🛡️ Verzuimregistratie</a></li>
-          <li><a href="https://werktijden.nl/functies"><b>Bekijk alle functies</b></a></li>
-        </ul>
-      </li>
-
-      <!-- Branches (uitklapbaar) -->
-      <li class="accordion branches">
-        <button class="accordion-btn branches-btn" type="button">
-          Branches <span class="arrow">⌄</span>
-        </button>
-
-        <ul class="submenu">
-          <li><a href="https://werktijden.nl/branches/horeca-en-hospitality">🧪 Horeca en hospitality</a></li>
-          <li><a href="https://werktijden.nl/branches/winkel-retail-en-detailhandel">🧺 Winkel, retail en detailhandel</a></li>
-          <li><a href="https://werktijden.nl/branches/productie">📦 Productie</a></li>
-          <li><a href="https://werktijden.nl/branches/recreatie">🏖️ Recreatie</a></li>
-          <li><a href="https://werktijden.nl/branches/transport-en-logistiek">🚚 Transport en warehousing</a></li>
-          <li><a href="https://werktijden.nl/branches/transport-en-logistiek">🛡️ Zorg en gezondheid</a></li>
-          <li><a href="https://werktijden.nl/branches"><b>Bekijk alle branches</b></a></li>
-        </ul>
-      </li>
-
-      <!-- normale items -->
+      <li><a href="#">Functies</a></li>
+      <li><a href="#">Branches</a></li>
       <li><a href="#">Klanten</a></li>
-      <li><a href="#">Koppelingen</a></li>
       <li><a href="#">Tarieven</a></li>
-      <li><a href="#">Plan een demo</a></li>
       <li><a href="#">Contact</a></li>
       <li><a href="index.html">Vacatures</a></li>
     </ul>
 
-    <section class="mobile-menu-bottom" aria-label="Account acties mobiel">
-      <h2 class="visually-hidden">Account acties</h2>
-
+    <section class="mobile-menu-bottom">
       <a class="mobile-btn mobile-btn-outline" href="#">Inloggen</a>
       <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
     </section>
+  </section>
 
-  <!-- Main content -->
+  <!-- ================= MAIN ================= -->
   <main id="main">
 
-    <!-- Pagina intro -->
+    <!-- Intro -->
     <header class="page-header">
       <h1>Werken bij werktijden</h1>
       <p>
@@ -124,36 +86,34 @@
       </p>
     </header>
 
-    <!-- Vacature slider -->
+    <!-- ================= VACATURES ================= -->
     <section class="vacature-slider">
       <h2 class="visually-hidden">Vacatures</h2>
 
-      <section class="slider-track" aria-label="Vacature overzicht">
-        <h3 class="visually-hidden">Vacature overzicht</h3>
+      <section class="slider-track">
 
         <!-- Vacature 1 -->
         <article class="vacature">
           <header>
             <p class="vacature-badge">Nieuw</p>
             <h3>Klantadviseur</h3>
-            <p>Werktijden.nl B.V. · Amsterdam</p>
+            <p>Werktijden.nl · Amsterdam</p>
           </header>
 
           <ul class="vacature-info">
-            <li>Fulltime</li>
-            <li>Parttime</li>
-            <li>ma–vr</li>
+            <li>Fulltime / Parttime</li>
             <li>32–40 uur</li>
+            <li>ma–vr</li>
           </ul>
 
-          <p class="vacature-salaris">€ 2.500 – € 4.000 per maand</p>
+          <p class="vacature-salaris">€ 2.500 – € 4.000</p>
 
           <p class="vacature-tekst">
-            Ben jij op zoek naar een functie waarin jouw communicatievaardigheden echt tot hun recht komen?
-            Heb je ervaring in klantcontact binnen een B2B-omgeving...
+            Ben jij communicatief sterk en help je klanten graag verder? Dan is deze
+            rol bij Werktijden.nl iets voor jou.
           </p>
 
-          <a href="Vacature.html">Bekijk vacature Klantadviseur</a>
+          <a href="Vacature.html">Bekijk vacature</a>
         </article>
 
         <!-- Vacature 2 -->
@@ -161,7 +121,7 @@
           <header>
             <p class="vacature-badge">Nieuw</p>
             <h3>Frontend Developer</h3>
-            <p>Werktijden.nl B.V. · Amsterdam</p>
+            <p>Werktijden.nl · Amsterdam</p>
           </header>
 
           <ul class="vacature-info">
@@ -170,13 +130,14 @@
             <li>32–40 uur</li>
           </ul>
 
-          <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
+          <p class="vacature-salaris">€ 3.000 – € 4.500</p>
 
           <p class="vacature-tekst">
-            Werk aan moderne interfaces, verbeter de user experience en bouw mee aan een product dat dagelijks gebruikt wordt...
+            Werk aan moderne interfaces en verbeter dagelijks de gebruikerservaring
+            van duizenden klanten.
           </p>
 
-          <a href="Vacature.html">Bekijk vacature Frontend Developer</a>
+          <a href="Vacature.html">Bekijk vacature</a>
         </article>
 
         <!-- Vacature 3 -->
@@ -184,7 +145,7 @@
           <header>
             <p class="vacature-badge">Nieuw</p>
             <h3>Marketing Coördinator</h3>
-            <p>Werktijden.nl B.V. · Amsterdam</p>
+            <p>Werktijden.nl · Utrecht</p>
           </header>
 
           <ul class="vacature-info">
@@ -193,20 +154,20 @@
             <li>32–40 uur</li>
           </ul>
 
-          <p class="vacature-salaris">€ 3.000 – € 4.500 per maand</p>
+          <p class="vacature-salaris">€ 3.000 – € 3.800</p>
 
           <p class="vacature-tekst">
-            Zet campagnes op, analyseer resultaten en zorg dat Werktijden.nl online beter zichtbaar wordt...
+            Zet campagnes op, analyseer resultaten en zorg dat Werktijden.nl online
+            blijft groeien.
           </p>
 
-          <a href="Vacature.html">Bekijk vacature Marketing Coördinator</a>
+          <a href="Vacature.html">Bekijk vacature</a>
         </article>
 
       </section>
 
-      <section class="slider-dots" aria-label="Navigatie vacatures">
-        <h3 class="visually-hidden">Navigatie vacatures</h3>
-
+      <!-- ✅ BUBBELTJES (slider dots) -->
+      <section class="slider-dots">
         <button class="dot is-active" type="button">
           <span class="visually-hidden">Vacature 1</span>
         </button>
@@ -222,10 +183,9 @@
 
   </main>
 
-  <!-- Footer -->
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <section class="footer-container">
-      <h2 class="visually-hidden">Footer</h2>
 
       <section class="footer-brand">
         <h3 class="footer-logo">werktijden.nl</h3>
@@ -234,62 +194,29 @@
           <a href="#">Privacy</a> |
           <a href="#">Voorwaarden</a>
         </p>
-        <p>Copyright © 2026 Werktijden.nl</p>
-      </section>
-
-      <section class="footer-column">
-        <h3>Functies</h3>
-        <ul>
-          <li><a href="#">Personeelsplanning</a></li>
-          <li><a href="#">Verlofregistratie</a></li>
-          <li><a href="#">Urenregistratie</a></li>
-          <li><a href="#">Rooster maken</a></li>
-          <li><a href="#">Prikklok</a></li>
-          <li><a href="#">Mobiele app</a></li>
-          <li><a href="#">Evenementen planning</a></li>
-          <li><a href="#">Verzuimregistratie</a></li>
-        </ul>
-      </section>
-
-      <section class="footer-column">
-        <h3>Branches</h3>
-        <ul>
-          <li><a href="#">Horeca en hospitality</a></li>
-          <li><a href="#">Winkel, retail en detailhandel</a></li>
-          <li><a href="#">Productie</a></li>
-          <li><a href="#">Recreatie</a></li>
-          <li><a href="#">Transport en warehousing</a></li>
-          <li><a href="#">Zorg en gezondheid</a></li>
-        </ul>
+        <p>© 2026 Werktijden.nl</p>
       </section>
 
       <section class="footer-column">
         <h3>Product</h3>
         <ul>
-          <li><a href="#">Aanmelden</a></li>
-          <li><a href="#">Inloggen</a></li>
+          <li><a href="#">Functies</a></li>
+          <li><a href="#">Branches</a></li>
           <li><a href="#">Tarieven</a></li>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Koppelingen</a></li>
-          <li><a href="#">Vergelijkingen</a></li>
         </ul>
       </section>
 
       <section class="footer-column">
-        <h3>Werktijden.nl</h3>
+        <h3>Bedrijf</h3>
         <ul>
-          <li><a href="#">Contact</a></li>
           <li><a href="#">Over ons</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Klanten</a></li>
-          <li><a href="#">Demo inplannen</a></li>
-          <li><a href="#">Vacatures</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Vacatures</a></li>
         </ul>
       </section>
 
     </section>
   </footer>
 
-  <script src="script/script.js"></script>
 </body>
 </html>
