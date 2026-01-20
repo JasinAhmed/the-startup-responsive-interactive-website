@@ -34,7 +34,7 @@
 
 :root {
   /* Kleuren (WCAG-proof) */
-  --wt-primary: rgb(22, 84, 65);       /* ✅ voldoende contrast met wit */
+  --wt-primary:rgb(5, 150, 105);      /* ✅ voldoende contrast met wit */
   --wt-container: rgb(255, 255, 255);
   --wt-section-bg: rgb(249, 250, 251);
 

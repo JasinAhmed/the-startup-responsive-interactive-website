@@ -169,7 +169,7 @@ main {
   }
 }
 
-/* ====== PAGE HEADER ====== */
+/* PAGE HEADER  */
 .page-header {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
