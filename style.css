@@ -489,23 +489,6 @@ main {
   border: none;
 }
 
-/* CHAT FAB */
-.chat-fab {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  width: 64px;
-  height: 64px;
-  border-radius: 999px;
-  background: var(--wt-primary);
-  color: var(--wt-text-light);
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  font-size: 26px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
 /* ACCORDION */
 .accordion-btn{
   width: 100%;
@@ -679,8 +662,8 @@ main {
 .detail-tabs{
   display: flex;
   gap: 14px;
-  background: transparent;      /* <-- dit haalt de groene balk weg */
-  padding: 0;                   /* <-- geen extra ruimte */
+  background: transparent;      
+  padding: 0;                   
   border-radius: 0;
   margin-top: 18px;
 
@@ -735,87 +718,4 @@ main {
 /* panel verbergen (zodat maar 1 zichtbaar is) */
 .is-hidden{
   display: none;
-}
-
-   /* popup - solliciteren*/
-
-.wt-modal {
-  width: min(640px, calc(100% - 32px));
-  border: 0;
-  padding: 0;
-  border-radius: 16px;
-  background: var(--wt-container);
-  color: var(--wt-text-dark);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
-
-  /* container query voor de popup*/
-  container-type: inline-size;
-  container-name: modal;
-}
-
-/* Overlay */
-.wt-modal::backdrop {
-  background: rgba(15, 23, 42, 0.55);
-}
-
-/* Header */
-.wt-modal__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--wt-border);
-}
-
-.wt-modal__title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.wt-modal__close {
-  border: 1px solid var(--wt-border);
-  background: var(--wt-container);
-  border-radius: 10px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Body */
-.wt-modal__body {
-  padding: 18px;
-}
-
-/* Animatie */
-.wt-modal[open] {
-  animation: wtModalIn 160ms ease-out;
-}
-
-@keyframes wtModalIn {
-  from { opacity: 0; transform: translateY(10px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* Focus netjes */
-.wt-modal__close:focus-visible,
-.wt-modal .wt-btn:focus-visible,
-.wt-modal input:focus-visible,
-.wt-modal textarea:focus-visible {
-  outline: 3px solid rgba(22, 84, 65, 0.35);
-  outline-offset: 3px;
-}
-
-/* mobile first */
-.wt-modal__body .wt-btn {
-  width: 100%;
-}
-
-/* container query */
-@container modal (min-width: 520px) {
-  .wt-modal__body .wt-btn {
-    width: auto;
-  }
 }

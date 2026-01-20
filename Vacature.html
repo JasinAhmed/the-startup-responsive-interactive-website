@@ -101,7 +101,7 @@
       <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
     </section>
 
-    <a class="chat-fab" href="#" aria-label="Chat openen">💬</a>
+
   </section>
 
   <!-- ================= MAIN ================= -->
@@ -113,52 +113,47 @@
       <h1>Marketing Coördinator</h1>
       <p>werktijden.nl · Marketing</p>
 
-      <!-- knop + dialog popup -->
-      <button class="wt-btn wt-primary" type="button" id="openSollicitatie">
-        Solliciteer nu
-      </button>
+     <!-- knop + dialog popup -->
+<button class="wt-btn wt-primary" type="button" id="openSollicitatie">
+  Solliciteer nu
+</button>
 
-      <dialog class="wt-modal" id="sollicitatieModal" aria-labelledby="sollicitatieTitel">
-        <form class="wt-form wt-modal__body" action="/solliciteer" method="post" enctype="multipart/form-data">
+<dialog class="wt-modal" id="sollicitatieModal">
+  <form class="wt-form wt-modal__body" action="/solliciteer" method="post" enctype="multipart/form-data">
 
-          <header class="wt-modal__header">
-            <h2 id="sollicitatieTitel" class="wt-modal__title">Solliciteren</h2>
-            <button class="wt-modal__close" type="button" id="closeSollicitatieX" aria-label="Sluiten">✕</button>
-          </header>
+    <header class="wt-modal__header">
+      <h2 class="wt-modal__title">Solliciteren</h2>
+      <button class="wt-modal__close" type="button" id="closeSollicitatieX">✕</button>
+    </header>
 
-          <fieldset class="wt-modal__fieldset">
-            <legend class="visually-hidden">Sollicitatieformulier</legend>
+    <fieldset class="wt-modal__fieldset">
+      <legend class="visually-hidden">Sollicitatieformulier</legend>
 
-            <label>
-              Naam
-              <input type="text" name="naam" class="wt-input" required autocomplete="name">
-            </label>
+      <label>
+        Naam
+        <input type="text" name="naam" class="wt-input" required autocomplete="name">
+      </label>
 
-            <label>
-              E-mail
-              <input type="email" name="email" class="wt-input" required autocomplete="email">
-            </label>
+      <label>
+        E-mail
+        <input type="email" name="email" class="wt-input" required autocomplete="email">
+      </label>
 
-            <label>
-              Telefoon (optioneel)
-              <input type="tel" name="telefoon" class="wt-input" autocomplete="tel">
-            </label>
+      <label>
+        Motivatie
+        <textarea name="motivatie" class="wt-textarea" required></textarea>
+      </label>
 
-            <label>
-              Motivatie
-              <textarea name="motivatie" class="wt-textarea" required></textarea>
-            </label>
+      <label>
+        CV uploaden (PDF/DOC/DOCX)
+        <input type="file" name="cv" class="wt-input" accept=".pdf,.doc,.docx" required>
+      </label>
 
-            <label>
-              CV uploaden (PDF/DOC/DOCX)
-              <input type="file" name="cv" class="wt-input" accept=".pdf,.doc,.docx" required>
-            </label>
+      <button type="submit" class="wt-btn wt-primary">Versturen</button>
 
-            <button type="submit" class="wt-btn wt-primary">Versturen</button>
-            <button type="button" class="wt-btn wt-secondary" id="closeSollicitatie">Annuleren</button>
-          </fieldset>
-        </form>
-      </dialog>
+    </fieldset>
+  </form>
+    </dialog>
 
       <ul class="vacature-info">
         <li>Utrecht / Hybride</li>
