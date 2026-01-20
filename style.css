@@ -410,9 +410,14 @@ main {
     pointer-events: auto;
   }
 
-  &[hidden]{
-    display: none;
-  }
+ .mobile-menu{
+  visibility: hidden;
+}
+
+.mobile-menu.is-open{
+  visibility: visible;
+}
+
 
   .mobile-menu-header {
     display: flex;
@@ -704,4 +709,8 @@ main {
 
 .is-hidden{
   display: none;
+}
+.submenu img {
+  width: 20px;
+  height: 20px;
 }
