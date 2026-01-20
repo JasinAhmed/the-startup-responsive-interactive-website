@@ -1,9 +1,15 @@
 
-   /* WERKTIJDEN.NL – STYLEGUIDE (WCAG-CONTRAST GOEDGEKEURD) */
+   /* WERKTIJDEN.NL — STYLEGUIDE (LEIDEND) */
+   /* Doel: consistente styling + toegankelijk (WCAG AA basis) */
 
 
 
-   /* Font: Inter */
+/* ===========================================================
+   1) FONT (Inter)
+   Let op: kies uiteindelijk 1 methode:
+   - OF lokaal via @font-face (hieronder)
+   - OF via Google Fonts (dan @font-face weghalen)
+   =========================================================== */
 
 @font-face {
   font-family: "Inter";
@@ -30,25 +36,51 @@
 }
 
 
-   /* Root variables */
+/* ===========================================================
+   2) DESIGN TOKENS (LEIDEND)
+   Alles wat vaak terugkomt staat hier als CSS-variabele.
+   Hierdoor blijft de styleguide leidend en consistent.
+   =========================================================== */
 
 :root {
-  /* Kleuren (WCAG-proof) */
-  --wt-primary:rgb(5, 150, 105);      /* ✅ voldoende contrast met wit */
-  --wt-container: rgb(255, 255, 255);
-  --wt-section-bg: rgb(249, 250, 251);
+  /* Kleuren */
+  --wt-primary: rgb(5, 150, 105);      /* huisstijl groen (primary) */
+  --wt-container: rgb(255, 255, 255);  /* wit voor cards/containers */
+  --wt-section-bg: rgb(249, 250, 251); /* lichte achtergrond */
 
-  --wt-text-dark: rgb(57, 65, 80);
-  --wt-text-light: rgb(255, 255, 255);
+  --wt-text-dark: rgb(57, 65, 80);     /* standaard tekstkleur */
+  --wt-text-light: rgb(255, 255, 255); /* tekst op donkere vlakken */
 
-  --wt-border: rgb(229, 231, 235);
+  /* WCAG (UI-componenten):
+     Border was te licht op wit, daarom iets donkerder voor betere zichtbaarheid. */
+  --wt-border: rgb(209, 213, 219);
+
+  /* WCAG (toetsenbord):
+     Focus kleur om zichtbaar te navigeren met Tab */
+  --wt-focus: var(--wt-primary);
 
   /* Font */
   --wt-font: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Typografie (leidend) */
+  --wt-fs-body: 14px;
+  --wt-fs-h1: 28px;
+  --wt-fs-h2: 18px;
+  --wt-fs-h3: 14px;
+
+  --wt-fw-regular: 400;
+  --wt-fw-semibold: 600;
+  --wt-fw-bold: 700;
+
+  /* Radius tokens */
+  --wt-radius-lg: 14px;
+  --wt-radius-md: 10px;
 }
 
 
-   /* Base */
+
+ 
+
 * {
   box-sizing: border-box;
 }
@@ -61,10 +93,18 @@ body {
   color: var(--wt-text-dark);
 }
 
+/* Main is de “container” voor de pagina breedte */
 main {
   padding: 16px;
   max-width: 900px;
   margin: 0 auto;
+}
+
+/* Header krijgt dezelfde breedte als main (consistent layout) */
+.wt-header {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto 2rem;
 }
 
 a {
@@ -81,36 +121,37 @@ button {
 }
 
 
-   /* Typography */
+
+   /* TYPOGRAPHY */
+ 
+
+
 h1 {
   margin: 0 0 8px;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: var(--wt-fs-h1);
+  font-weight: var(--wt-fw-bold);
 }
 
 h2 {
   margin: 0 0 12px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: var(--wt-fs-h2);
+  font-weight: var(--wt-fw-semibold);
 }
 
 h3 {
   margin: 0 0 10px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--wt-fs-h3);
+  font-weight: var(--wt-fw-semibold);
 }
 
 p {
   margin: 0 0 12px;
-  font-size: 14px;
+  font-size: var(--wt-fs-body);
   line-height: 1.5;
 }
 
 
-   /* Layout helpers */
-.wt-header {
-  margin-bottom: 2rem;
-}
+
 
 .wt-main {
   display: grid;
@@ -121,11 +162,14 @@ p {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
   padding: 1.5rem;
-  border-radius: 14px;
+  border-radius: var(--wt-radius-lg);
 }
 
 
-   /* Color preview blocks */
+  
+   /* Kleurblokjes voor mijn styleguide demo */
+   
+
 .wt-color-item {
   display: flex;
   align-items: center;
@@ -143,7 +187,11 @@ p {
 }
 
 
-   /* Color utility classes */
+
+   /*UTILITY CLASSES (kleur) */
+
+
+
 .wt-primary {
   background: var(--wt-primary);
   color: var(--wt-text-light);
@@ -167,38 +215,64 @@ p {
 }
 
 
-   /* Font demo */
+
+  /* FONT DEMO */
+   /* Demo-blok voor letters/cijfers */
+
+
 .wt-font-demo {
   border: 1px solid var(--wt-border);
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: var(--wt-radius-md);
 }
 
 
-/* Buttons */
+
+   /* BUTTONS */ 
+   /* Buttons zijn vaste componenten: consistent + toegankelijk. */
+
+
 .wt-btn {
   padding: 0.6rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--wt-border);
-  font-weight: 600;
+  font-weight: var(--wt-fw-semibold);
   cursor: pointer;
   margin-right: 0.5rem;
   background: var(--wt-container);
   color: var(--wt-text-dark);
 }
 
+/* Subtiele hover (zonder tekst contrast te verpesten) */
 .wt-btn:hover {
-  opacity: 0.95;
+  filter: brightness(0.98);
 }
 
+/* Primary button = huisstijl groen + witte tekst
+   Tip voor WCAG: voldoende font-weight + font-size voor leesbaarheid */
 .wt-btn.wt-primary {
   background: var(--wt-primary);
   color: var(--wt-text-light);
   border: none;
+  font-size: 16px;
+  font-weight: var(--wt-fw-semibold);
+}
+
+/* Secondary button (bestond nog niet maar werd wel gebruikt in HTML) */
+.wt-btn.wt-secondary {
+  background: transparent;
+  border: 2px solid var(--wt-primary);
+  color: var(--wt-primary);
+  font-size: 16px;
+  font-weight: var(--wt-fw-semibold);
 }
 
 
-   /* Forms */
+
+    /* FORMS  */
+   /* Inputs/textarea met duidelijke randen + consistente padding */
+
+
 .wt-form {
   display: grid;
   gap: 1rem;
@@ -208,10 +282,12 @@ p {
 .wt-form textarea {
   width: 100%;
   padding: 0.6rem;
-  border-radius: 10px;
+  border-radius: var(--wt-radius-md);
   border: 1px solid var(--wt-border);
   font-family: var(--wt-font);
   font-size: 14px;
+  background: var(--wt-container);
+  color: var(--wt-text-dark);
 }
 
 .wt-form textarea {
@@ -219,8 +295,18 @@ p {
   height: 100px;
 }
 
+ 
 
-   /* Accessibility helpers */
+/* Focus ring: belangrijk voor toegankelijkheid en WCAG */
+.wt-btn:focus-visible,
+.wt-form input:focus-visible,
+.wt-form textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--wt-focus);
+  outline-offset: 2px;
+}
+
+/* Helper class voor screenreader-only tekst */
 .visually-hidden {
   position: absolute;
   width: 1px;
