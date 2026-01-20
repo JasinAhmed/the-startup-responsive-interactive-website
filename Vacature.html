@@ -25,7 +25,7 @@
         <img src="assets/logowerk.svg" alt="Werktijden.nl">
       </a>
 
-      <nav class="main-nav" aria-label="Hoofdnavigatie">
+      <nav class="main-nav">
         <button class="menu-open" type="button">
           ☰ <span class="visually-hidden">Menu openen</span>
         </button>
@@ -38,7 +38,7 @@
           <li><a class="nav-link" href="#">Tarieven</a></li>
         </ul>
 
-        <section class="header-actions" aria-label="Account acties">
+        <section class="header-actions">
           <h3 class="visually-hidden">Account acties</h3>
           <a class="header-btn header-btn-outline" href="#">Inloggen</a>
           <a class="header-btn header-btn-primary" href="#">Probeer gratis</a>
@@ -95,65 +95,65 @@
       <li><a href="index.html">Vacatures</a></li>
     </ul>
 
-    <section class="mobile-menu-bottom" aria-label="Account acties mobiel">
+    <section class="mobile-menu-bottom">
       <h2 class="visually-hidden">Account acties</h2>
       <a class="mobile-btn mobile-btn-outline" href="#">Inloggen</a>
       <a class="mobile-btn mobile-btn-primary" href="#">Probeer 14 dagen gratis</a>
     </section>
-
-
   </section>
 
   <!-- ================= MAIN ================= -->
   <main id="main">
 
-    <header class="page-header">
+    <!-- FIX: was <header class="page-header"> -->
+    <section class="page-header">
       <p><a href="index.html">← Terug naar vacatures</a></p>
 
       <h1>Marketing Coördinator</h1>
       <p>werktijden.nl · Marketing</p>
 
-     <!-- knop + dialog popup -->
-<button class="wt-btn wt-primary" type="button" id="openSollicitatie">
-  Solliciteer nu
-</button>
+      <!-- knop + dialog popup -->
+      <button class="wt-btn wt-primary" type="button" id="openSollicitatie">
+        Solliciteer nu
+      </button>
 
-<dialog class="wt-modal" id="sollicitatieModal">
-  <form class="wt-form wt-modal__body" action="/solliciteer" method="post" enctype="multipart/form-data">
+      <dialog class="wt-modal" id="sollicitatieModal">
+        <form class="wt-form wt-modal__body" action="/solliciteer" method="post" enctype="multipart/form-data">
 
-    <header class="wt-modal__header">
-      <h2 class="wt-modal__title">Solliciteren</h2>
-      <button class="wt-modal__close" type="button" id="closeSollicitatieX">✕</button>
-    </header>
+          <!-- dit mag nu, want parent is geen <header> meer -->
+          <header class="wt-modal__header">
+            <h2 class="wt-modal__title">Solliciteren</h2>
+            <button class="wt-modal__close" type="button" id="closeSollicitatieX">✕</button>
+          </header>
 
-    <fieldset class="wt-modal__fieldset">
-      <legend class="visually-hidden">Sollicitatieformulier</legend>
+          <fieldset class="wt-modal__fieldset">
+            <legend class="visually-hidden">Sollicitatieformulier</legend>
 
-      <label>
-        Naam
-        <input type="text" name="naam" class="wt-input" required autocomplete="name">
-      </label>
+            <label>
+              Naam
+              <input type="text" name="naam" class="wt-input" required autocomplete="name">
+            </label>
 
-      <label>
-        E-mail
-        <input type="email" name="email" class="wt-input" required autocomplete="email">
-      </label>
+            <label>
+              E-mail
+              <input type="email" name="email" class="wt-input" required autocomplete="email">
+            </label>
 
-      <label>
-        Motivatie
-        <textarea name="motivatie" class="wt-textarea" required></textarea>
-      </label>
+            <label>
+              Motivatie
+              <textarea name="motivatie" class="wt-textarea" required></textarea>
+            </label>
 
-      <label>
-        CV uploaden (PDF/DOC/DOCX)
-        <input type="file" name="cv" class="wt-input" accept=".pdf,.doc,.docx" required>
-      </label>
+            <label>
+              CV uploaden (PDF/DOC/DOCX)
+              <input type="file" name="cv" class="wt-input" accept=".pdf,.doc,.docx" required>
+            </label>
 
-      <button type="submit" class="wt-btn wt-primary">Versturen</button>
+            <button type="submit" class="wt-btn wt-primary">Versturen</button>
+          </fieldset>
 
-    </fieldset>
-  </form>
-    </dialog>
+        </form>
+      </dialog>
 
       <ul class="vacature-info">
         <li>Utrecht / Hybride</li>
@@ -162,10 +162,10 @@
         <li>HBO niveau</li>
         <li>Vast contract</li>
       </ul>
-    </header>
+    </section>
 
     <!-- TABS-->
-    <nav class="detail-tabs" aria-label="Vacature tabs">
+    <nav class="detail-tabs">
       <button class="detail-tab is-active" type="button" data-tab="tab-werktijden">Over de functie</button>
       <button class="detail-tab" type="button" data-tab="tab-functie">Wat ga je doen</button>
       <button class="detail-tab" type="button" data-tab="tab-bieden">Wat wij bieden</button>
