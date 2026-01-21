@@ -12,7 +12,7 @@ main {
   margin: 0 auto;
 }
 
-/* ====== HEADER (CONTAINER QUERIES, WERKTIJDEN LOOK) ====== */
+/* HEADER (CONTAINER QUERIES, WERKTIJDEN LOOK)  */
 .site-header {
   background: var(--wt-container);
   border-bottom: 1px solid var(--wt-border);
@@ -90,11 +90,11 @@ main {
 .desktop-nav { display: none; }
 .header-actions { display: none; }
 
-/* Desktop via container query (geen media queries) */
-@container header (min-width: 992px) {
+/* Desktop via container query  */
+@container header (min-width: 1024px) {
   .menu-open { display: none; }
 
-  /* desktop: terug naar jouw oude spacing */
+  /* desktop */
   .header-inner{
     padding: 0 24px;
     gap: 16px;
@@ -165,13 +165,16 @@ main {
   }
 }
 
-/*PAGE HEADER */
+/*  PAGE HEADER  */
 .page-header {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
   padding: 16px;
   margin-top: 16px;
   border-radius: 18px;
+
+  /* container query aan */
+  container-type: inline-size;
 }
 
 .page-header h1 {
@@ -181,7 +184,24 @@ main {
 
 .page-header p { margin: 0; }
 
-/* VACATURE OVERZICHT */
+/* Titel highlight (Werken bij + groen stuk) */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.page-title .highlight {
+  color: #0a8f5a;
+}
+
+@container (max-width: 320px) {
+  .page-title {
+    font-size: 2rem;
+  }
+}
+
+/*  VACATURE OVERZICHT  */
 .vacature-overzicht { margin-top: 16px; }
 
 .vacature-overzicht > h2 {
@@ -189,7 +209,7 @@ main {
   font-size: 18px;
 }
 
-/*VACATURE CARD*/
+/* VACATURE CARD  */
 .vacature {
   background: var(--wt-container);
   border: 1px solid var(--wt-border);
@@ -279,7 +299,7 @@ main {
   line-height: 1.4;
 }
 
-/* VISUALLY HIDDEN  */
+/* ====== VISUALLY HIDDEN ====== */
 .visually-hidden{
   position: absolute;
   width: 1px;
@@ -292,7 +312,7 @@ main {
   border: 0;
 }
 
-/* VACATURE SLIDER */
+/* ====== VACATURE SLIDER ====== */
 .vacature-slider {
   margin-top: 16px;
   position: relative;
@@ -393,7 +413,7 @@ main {
   .slider-dots { display: none; }
 }
 
-/*MOBILE MENU */
+/* ====== MOBILE MENU ====== */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -489,7 +509,7 @@ main {
   border: none;
 }
 
-/* ACCORDION */
+/* ====== ACCORDION ====== */
 .accordion-btn{
   width: 100%;
   padding: 18px 16px;
@@ -547,7 +567,7 @@ main {
   display: block;
 }
 
-/*FOOTER */
+/* ====== FOOTER ====== */
 .footer {
   margin-top: 20px;
   background: linear-gradient(180deg, rgb(16, 24, 40), rgb(2, 6, 23));
@@ -609,7 +629,7 @@ main {
   .footer-column { margin-bottom: 0; }
 }
 
-/*  WCAG audit fix */
+/* ====== WCAG audit fix ====== */
 
 /* Skip link: alleen zichtbaar als je met Tab navigeert */
 .skip-link{
@@ -641,29 +661,12 @@ main {
 }
 
 /* ====== DETAIL TABS ====== */
-.detail-tabs{
-  display: flex;
-  gap: 14px;
-  background: var(--wt-primary);
-  padding: 18px 18px 0;
-  border-radius: 18px;
-  margin-top: 18px;
-
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.detail-tabs::-webkit-scrollbar{
-  display: none;
-}
-
-/* ik gebruik nu buttons i.p.v. links */
 /* GROENE BALK WEG */
 .detail-tabs{
   display: flex;
   gap: 14px;
-  background: transparent;      
-  padding: 0;                   
+  background: transparent;
+  padding: 0;
   border-radius: 0;
   margin-top: 18px;
 
@@ -719,14 +722,17 @@ main {
 .is-hidden{
   display: none;
 }
-/*  POPUP BASIS  */
 
+/* ====== POPUP BASIS ====== */
 .wt-modal {
   border: none;
   border-radius: 10px;
   padding: 0;
   width: 100%;
   max-width: 500px;
+
+  /* Popup als container */
+  container-type: inline-size;
 }
 
 /* Donkere achtergrond */
@@ -734,13 +740,7 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Popup als container */
-.wt-modal {
-  container-type: inline-size;
-}
-
-/* HEADER  */
-
+/* ====== HEADER (POPUP) ====== */
 .wt-modal__header {
   padding: 1rem;
   border-bottom: 1px solid #ddd;
@@ -762,8 +762,7 @@ main {
   cursor: pointer;
 }
 
-/* FORM  */
-
+/* ====== FORM (POPUP) ====== */
 .wt-modal__body {
   padding: 1rem;
 }
@@ -790,10 +789,8 @@ main {
   border-radius: 5px;
 }
 
-/* CONTAINER QUERY  */
-/* Als de popup smal wordt */
-
-@container (max-width: 400px) {
+/* CONTAINER QUERY (POPUP) */
+@container (max-width: 320px) {
   .wt-modal__header {
     flex-direction: column;
     align-items: flex-start;
@@ -802,22 +799,5 @@ main {
 
   .wt-modal__title {
     font-size: 1rem;
-  }
-}
-.page-header {
-  container-type: inline-size;
-}
-.page-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #222;
-}
-
-.page-title .highlight {
-  color: #0a8f5a;
-}
-@container (max-width: 320px) {
-  .page-title {
-    font-size: 2rem;
   }
 }
