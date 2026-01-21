@@ -413,10 +413,14 @@ main {
   .slider-dots { display: none; }
 }
 
-/* ====== MOBILE MENU ====== */
+/*  MOBILE MENU  */
 .mobile-menu {
   position: fixed;
   inset: 0;
+
+  /* mobiel fix: voorkomt rare vh issues door adresbalk */
+  height: 100vh;
+  height: 100dvh;
 
   /* mobile first: voorkomt rare breedte issues op mobiel */
   width: 100%;
@@ -432,6 +436,7 @@ main {
   pointer-events: none;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
+
 
 .mobile-menu.is-open {
   transform: translateX(0);
@@ -509,7 +514,7 @@ main {
   border: none;
 }
 
-/* ====== ACCORDION ====== */
+/*  ACCORDION  */
 .accordion-btn{
   width: 100%;
   padding: 18px 16px;
@@ -567,7 +572,7 @@ main {
   display: block;
 }
 
-/* ====== FOOTER ====== */
+/*  FOOTER  */
 .footer {
   margin-top: 20px;
   background: linear-gradient(180deg, rgb(16, 24, 40), rgb(2, 6, 23));
@@ -642,7 +647,6 @@ main {
   color: var(--wt-text-light);
   text-decoration: none;
   transform: translateY(-200%);
-  z-index: 10000;
 }
 
 .skip-link:focus{
@@ -660,7 +664,7 @@ main {
   display: none;
 }
 
-/* ====== DETAIL TABS ====== */
+/*  DETAIL TABS */
 /* GROENE BALK WEG */
 .detail-tabs{
   display: flex;
@@ -723,7 +727,7 @@ main {
   display: none;
 }
 
-/* ====== POPUP BASIS ====== */
+/*  POPUP BASIS  */
 .wt-modal {
   border: none;
   border-radius: 10px;
@@ -740,7 +744,7 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* ====== HEADER (POPUP) ====== */
+/*  HEADER (POPUP)  */
 .wt-modal__header {
   padding: 1rem;
   border-bottom: 1px solid #ddd;
@@ -762,7 +766,7 @@ main {
   cursor: pointer;
 }
 
-/* ====== FORM (POPUP) ====== */
+/*  FORM (POPUP)  */
 .wt-modal__body {
   padding: 1rem;
 }
