@@ -170,13 +170,16 @@ tabButtons.forEach(button => {
   });
 });
 
-// SOLLICITATIE POPUP
+// SOLLICITATIE POPUP 
 
 // knop om de popup te openen
 const sollicitatieButton = document.querySelector('#openSollicitatie');
 
 // de dialog (popup)
 const sollicitatieModal = document.querySelector('#sollicitatieModal');
+
+// het kruisje in de popup
+const closeSollicitatieButton = document.querySelector('#closeSollicitatieX');
 
 // als je op "Solliciteer nu" klikt
 sollicitatieButton.addEventListener('click', () => {
@@ -185,8 +188,8 @@ sollicitatieButton.addEventListener('click', () => {
   sollicitatieModal.showModal();
 });
 
-// als je ergens op de popup of achtergrond klikt
-sollicitatieModal.addEventListener('click', () => {
+// als je op het kruisje klikt
+closeSollicitatieButton.addEventListener('click', () => {
 
   // popup sluiten
   sollicitatieModal.close();
