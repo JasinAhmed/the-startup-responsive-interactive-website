@@ -169,3 +169,25 @@ tabButtons.forEach(button => {
     targetPanel.classList.remove('is-hidden');
   });
 });
+
+// SOLLICITATIE POPUP
+
+// knop om de popup te openen
+const sollicitatieButton = document.querySelector('#openSollicitatie');
+
+// de dialog (popup)
+const sollicitatieModal = document.querySelector('#sollicitatieModal');
+
+// als je op "Solliciteer nu" klikt
+sollicitatieButton.addEventListener('click', () => {
+
+  // popup openen
+  sollicitatieModal.showModal();
+});
+
+// als je ergens op de popup of achtergrond klikt
+sollicitatieModal.addEventListener('click', () => {
+
+  // popup sluiten
+  sollicitatieModal.close();
+});
