@@ -2,13 +2,44 @@ Ontwerp en maak een responsive website voor een startup.
 
 De instructies voor deze opdracht staan in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-startup-responsive-interactieve-website/blob/main/docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Werktijden.nl
+Het doel van deze opdracht is het ontwerpen en ontwikkelen van een vernieuwde vacaturepagina, waarbij de website mobile-first is opgebouwd en goed werkt op zowel mobiel als desktop.
+
+🔗 **Live website:**  
+https://jasinahmed.github.io/the-startup-responsive-interactive-website/index.html
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+
+### ontwerp
+
+Het ontwerp van de vacaturepagina is gemaakt met een mobile-first aanpak.
+Dit betekent dat het ontwerp eerst is bedacht voor mobiele schermen en daarna is uitgebreid voor grotere schermen.
+
+#### Vacature cards
+Vacatures worden weergegeven als **cards** met de belangrijkste informatie.  
+Op mobiel zijn deze cards onderdeel van een **slider**, zodat gebruikers eenvoudig kunnen swipen tussen vacatures.  
+Op grotere schermen worden de vacatures automatisch in een **grid** weergegeven.
+
+<img width="390" height="629" alt="image" src="https://github.com/user-attachments/assets/38e72773-a88e-4891-ae1d-752f2b2f8efa" />
+<img width="1218" height="517" alt="image" src="https://github.com/user-attachments/assets/bc836102-5810-49ba-8a86-43976b4461da" />
+
+
+#### Navigatie en hamburger menu
+Op mobiel wordt gebruikgemaakt van een **hamburger menu**.  
+Binnen dit menu zit een **accordion**, zodat subpagina’s en categorieën overzichtelijk blijven en het menu niet te lang wordt.
+
+<img width="426" height="744" alt="image" src="https://github.com/user-attachments/assets/d015c5f9-f4b1-4de9-b55f-026e463cb06e" />
+
+
+#### Detailpagina met tabbladen
+Op de detailpagina is de informatie opgesplitst in **tabbladen**.  
+Hierdoor hoeft de gebruiker niet te scrollen door lange teksten en kan snel worden gewisseld tussen verschillende onderdelen van de vacature.
+
+<img width="1267" height="378" alt="image" src="https://github.com/user-attachments/assets/531d29f1-db1a-4fd4-a954-4e2d5c8e9e81" />
+
+
+
+
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
