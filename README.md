@@ -37,14 +37,90 @@ Hierdoor hoeft de gebruiker niet te scrollen door lange teksten en kan snel word
 
 <img width="1267" height="378" alt="image" src="https://github.com/user-attachments/assets/531d29f1-db1a-4fd4-a954-4e2d5c8e9e81" />
 
+### Toegankelijkheid
+Tijdens het ontwikkelen heb ik rekening gehouden met toegankelijkheid.  
+Ik heb onder andere:
 
+- Een skip-link toegevoegd om direct naar de main content te springen
+- Focus-styles zichtbaar gemaakt voor toetsenbordgebruikers
+- Semantische HTML gebruikt zoals header, nav, main en footer
+- Knoppen gebruikt voor interacties in plaats van divs
+
+Deze aanpassingen zorgen ervoor dat de website beter te gebruiken is met toetsenbord en screenreaders.
+
+
+### Huisstijl
+Bij het ontwerp heb ik de bestaande huisstijl van Werktijden.nl als uitgangspunt genomen.
+Ik heb gebruikgemaakt van groene accenten, afgeronde vormen en duidelijke contrasten,
+zodat de website betrouwbaar en professioneel aanvoelt.
+
+### Interactie
+De vacature-slider op mobiel maakt het mogelijk om met één vinger door vacatures te swipen.
+Dit sluit aan bij het mobiele gebruik van de doelgroep.
+
+Het hamburger menu bevat een accordion zodat het menu overzichtelijk blijft
+en gebruikers niet worden overweldigd door te veel links tegelijk.
 
 
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
+De website is opgebouwd met semantische HTML.
+CSS is mobile-first geschreven en maakt gebruik van container queries.
+JavaScript wordt gebruikt voor interacties zoals het hamburger menu,
+de slider, tabs en het sollicitatieformulier.
 
 ## Bronnen
+Tijdens het ontwikkelen van deze website heb ik gebruikgemaakt van online documentatie om beter te begrijpen hoe bepaalde onderdelen werken.
+Vooral MDN Web Docs heb ik gebruikt, omdat dit de officiële documentatie is voor HTML, CSS en JavaScript en goed aansluit bij wat we leren tijdens de opleiding.
+
+JavaScript
+
+Voor het werken met JavaScript heb ik opgezocht hoe ik elementen uit de HTML kan selecteren, hoe ik kan luisteren naar klikacties en hoe ik classes kan toevoegen of verwijderen. Deze kennis heb ik gebruikt voor het hamburger menu, de accordion, de tabs, de slider en de sollicitatie-popup.
+
+Bron:
+https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+Sollicitatie popup (<dialog>)
+
+Voor de sollicitatie-popup heb ik gebruikgemaakt van het native <dialog> element.
+Met dit element kan ik een popup openen en sluiten zonder extra libraries te gebruiken. Ik heb opgezocht hoe showModal() en close() werken om de popup te openen en te sluiten via JavaScript.
+
+Bron:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close
+
+Slider en scrollgedrag
+
+Voor de vacature-slider heb ik documentatie geraadpleegd om te begrijpen hoe ik kan bepalen hoeveel er horizontaal gescrold is en hoe breed een element is. Dit heb ik gebruikt om te berekenen welke vacature in beeld is en om de juiste dot actief te maken.
+
+Bron:
+https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetWidth
+
+Tabs met data-attributen
+
+Voor het maken van de tabbladen heb ik data-* attributen gebruikt. Hiermee kan ik in JavaScript bepalen welk contentblok bij welke tab hoort. Dit zorgt ervoor dat de HTML overzichtelijk blijft en de tabs makkelijk uitbreidbaar zijn.
+
+Bron:
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+
+Container queries
+
+Voor het responsive maken van onderdelen zoals de header, vacature-slider en popup heb ik container queries gebruikt. Hiermee passen componenten zich aan op basis van hun eigen container in plaats van alleen de schermgrootte.
+
+Bron:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries
+## Samenvatting
+De gebruikte bronnen hebben mij geholpen om beter te begrijpen hoe ik interactieve en responsive onderdelen kon bouwen met HTML, CSS en JavaScript. Door deze documentatie te gebruiken kon ik bewust keuzes maken in mijn code.
+
 ## Code conventies
 Code conventies zijn belangrijk om je code overzichtelijk en goed onderhoudbaar te houden. Door vaste afspraken te maken over inspringen, naamgeving en structuur is de code makkelijker te lezen, zowel voor mijzelf als voor anderen die de code bekijken.
 
