@@ -556,6 +556,15 @@ main {
   color: var(--wt-text-dark);
   text-decoration: none;
 }
+/* FIX: iconen in accordion submenu */
+.submenu a img {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
 .accordion.open .accordion-btn{
   background: rgba(5, 150, 105, 0.12);
