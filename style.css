@@ -719,3 +719,88 @@ main {
 .is-hidden{
   display: none;
 }
+/*  POPUP BASIS  */
+
+.wt-modal {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Donkere achtergrond */
+.wt-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Popup als container */
+.wt-modal {
+  container-type: inline-size;
+}
+
+/* HEADER  */
+
+.wt-modal__header {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wt-modal__title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.wt-modal__close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* FORM  */
+
+.wt-modal__body {
+  padding: 1rem;
+}
+
+.wt-modal__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  gap: 1rem;
+}
+
+.wt-modal__fieldset label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.wt-modal__fieldset input,
+.wt-modal__fieldset textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* CONTAINER QUERY  */
+/* Als de popup smal wordt */
+
+@container (max-width: 400px) {
+  .wt-modal__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .wt-modal__title {
+    font-size: 1rem;
+  }
+}
