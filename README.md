@@ -15,6 +15,10 @@ https://jasinahmed.github.io/the-startup-responsive-interactive-website/index.ht
 Het ontwerp van de vacaturepagina is gemaakt met een mobile-first aanpak.
 Dit betekent dat het ontwerp eerst is bedacht voor mobiele schermen en daarna is uitgebreid voor grotere schermen.
 
+<img width="1800" height="760" alt="all-devices-black (4)" src="https://github.com/user-attachments/assets/7dc07060-605b-4589-8936-6c7fc2ccfb4e" />
+
+*Mockup van gemaakte product pagina*
+
 #### Vacature cards
 Vacatures worden weergegeven als **cards** met de belangrijkste informatie.  
 Op mobiel zijn deze cards onderdeel van een **slider**, zodat gebruikers eenvoudig kunnen swipen tussen vacatures.  
@@ -50,9 +54,12 @@ Deze aanpassingen zorgen ervoor dat de website beter te gebruiken is met toetsen
 
 
 ### Huisstijl
-Bij het ontwerp heb ik de bestaande huisstijl van Werktijden.nl als uitgangspunt genomen.
-Ik heb gebruikgemaakt van groene accenten, afgeronde vormen en duidelijke contrasten,
-zodat de website betrouwbaar en professioneel aanvoelt.
+De opdrachtgever heeft een figma bestand doorgestuurd met hun huisstijhl. Op basis van [dit figma](https://www.figma.com/design/TjEVQZ5ufmKRZnnVgibrxD/Werktijden-styleguide?node-id=0-1&p=f&t=DpITnLwKFmv0lMmp-0) bestand heb ik een styleguide gemaakt. En dit toegepast op mijn website. 
+
+
+
+https://github.com/user-attachments/assets/2b99f2b1-d086-48ac-8337-ee92e4acca26
+
 
 ### Interactie
 De vacature-slider op mobiel maakt het mogelijk om met één vinger door vacatures te swipen.
