@@ -28,6 +28,10 @@ Op grotere schermen worden de vacatures automatisch in een **grid** weergegeven.
 <img width="1218" height="517" alt="image" src="https://github.com/user-attachments/assets/bc836102-5810-49ba-8a86-43976b4461da" />
 
 
+https://github.com/user-attachments/assets/8d7cce53-2ee8-40dd-9fae-edd4f0a988d1
+
+
+
 #### Navigatie en hamburger menu
 Op mobiel wordt gebruikgemaakt van een **hamburger menu**.  
 Binnen dit menu zit een **accordion**, zodat subpagina’s en categorieën overzichtelijk blijven en het menu niet te lang wordt.
@@ -35,11 +39,18 @@ Binnen dit menu zit een **accordion**, zodat subpagina’s en categorieën overz
 <img width="426" height="744" alt="image" src="https://github.com/user-attachments/assets/d015c5f9-f4b1-4de9-b55f-026e463cb06e" />
 
 
+https://github.com/user-attachments/assets/41efe005-1d42-4594-829f-08e535f580d6
+
+
+
 #### Detailpagina met tabbladen
 Op de detailpagina is de informatie opgesplitst in **tabbladen**.  
 Hierdoor hoeft de gebruiker niet te scrollen door lange teksten en kan snel worden gewisseld tussen verschillende onderdelen van de vacature.
 
 <img width="1267" height="378" alt="image" src="https://github.com/user-attachments/assets/531d29f1-db1a-4fd4-a954-4e2d5c8e9e81" />
+
+https://github.com/user-attachments/assets/187e3a6d-a4b8-443c-9495-1a05a1558b7c
+
 
 ### Toegankelijkheid
 Tijdens het ontwikkelen heb ik rekening gehouden met toegankelijkheid.  
