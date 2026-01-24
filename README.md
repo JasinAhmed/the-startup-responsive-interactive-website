@@ -178,6 +178,9 @@ Voorbeelden uit mijn HTML:
 
 https://github.com/JasinAhmed/the-startup-responsive-interactive-website/blob/6dbf4f2744c5aa1ace6da706b842df7f0bb8d0bd/index.html#L21-L23
 
+### Sprint review
+De sprint review was positief; het ontwerp kan nog duidelijker en rustiger met meer witruimte, de creativiteit werd gewaardeerd en het Figma-document moet worden gedeeld met Wesley.
+
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
