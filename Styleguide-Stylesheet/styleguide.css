@@ -44,7 +44,7 @@
 
 :root {
   /* Kleuren */
-  --wt-primary: rgb(5, 150, 105);      /* huisstijl groen (primary) */
+  --wt-primary: rgb(22, 84, 65);      /* huisstijl groen (primary) */
   --wt-container: rgb(255, 255, 255);  /* wit voor cards/containers */
   --wt-section-bg: rgb(249, 250, 251); /* lichte achtergrond */
 
